@@ -44,7 +44,7 @@ function ordena(a, b) {
     let pelirrojo = 3;
 
     if (a == "rubio") {
-        a = rubio; //aunque les cambie el valor dentro de la funcion, fuera no se cambia y se ordena segun lo haya hecho la funcion
+        a = rubio; //aunque les cambie el valor dentro de la funcion, fuera no se cambia(sigue siendo rubio, moreno o pelirrojo) y se ordena segun lo haya hecho la funcion
     } else if (a == "moreno") {
         a = moreno;
     } else {
