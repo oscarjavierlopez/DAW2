@@ -50,5 +50,5 @@ console.log("Si reemplazamos mundo por js cadena 1 queda así: " + cadena1.repla
 
 console.log("Cadena 1 sin espacios es: " + cadena1.trim()); //Elimina los espacios en blanco
 
-console.log("La cadena1 con huecos al principio es: " + cadena1.padStart(4));//Añade 2 espacios en blanco al inicio
-console.log("La cadena 1 con espacios al final es: " + cadena1.padEnd(2)); //añade 2 espacios en blanco al final
+console.log("La cadena1 con huecos al principio es: " + cadena1.padStart(20,"*"));//Añade  * al inicio hasta que la longitud de la cadena sea 20
+console.log("La cadena 1 con espacios al final es: " + cadena1.padEnd(20, "*")); //añade * al final hasta que la longitud de la cadena sea 20
