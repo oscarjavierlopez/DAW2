@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <h2>Selecciona tus colores favoritos:</h2>
+    <form method="post" action="procesar.php">
+        <label><input type="checkbox" name="colores[]" value="rojo"> Rojo</label><br> <!--Colores en vez de ser una variable es un array -->
+        <label><input type="checkbox" name="colores[]" value="verde">
+            Verde</label><br>
+        <label><input type="checkbox" name="colores[]" value="azul"> Azul</label><br>
+        <label><input type="checkbox" name="colores[]" value="amarillo">
+            Amarillo</label><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>
