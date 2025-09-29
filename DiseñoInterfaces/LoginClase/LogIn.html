@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn</title>
+</head>
+
+<body>
+    <form action="procesar.php" method="post" autocomplete="on">
+        <h1>Iniciar Sesión</h1>
+
+        <label for="correo">Correo electrónico</label><br>
+        <input type="text" id="correo" name="correo"><br>
+
+        <label for="contraseña">Contraseña</label><br>
+        <input type="password" id="contraseña" name="contraseña">
+        <button type="button">Mostrar</button><br>
+
+        <input type="checkbox" id="recordarme" name="recordarme" value="true">
+        <label for="recordarme">Recordarme</label>
+        <a href="">¿Olvidaste tu contraseña?</a><br>
+
+        <button type="button">Iniciar sesión</button><br>
+        <p>O continuar con</p>
+        <button type="button"><img src="IconoGoogle.png">Google</button><br>
+        <button type="button"><img src="IconoFacebook.jpg">Facebook</button><br>
+        <button type="button"><img src="IconoApple.png">Apple</button><br>
+        <button type="button"><img src="IconoMicrosoft.png">Microsoft</button><br>
+        <p>¿No tienes una cuenta? <a href="">Regístrate</a></p>
+    </form>
+</body>
+
+</html>
