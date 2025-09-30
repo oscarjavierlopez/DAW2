@@ -8,28 +8,38 @@
 </head>
 
 <body>
-    <form action="procesar.php" method="post" autocomplete="on">
-        <h1>Iniciar Sesión</h1>
+    <main>
+        <form action="procesar.php" method="post" autocomplete="on">
+            <h1>Iniciar Sesión</h1>
+            <div>
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo">
+            </div>
 
-        <label for="correo">Correo electrónico</label><br>
-        <input type="text" id="correo" name="correo"><br>
+            <div>
+                <label for="contraseña">Contraseña</label>
+                <input type="password" id="contraseña" name="contraseña">
+                <button type="button">Mostrar</button>
+            </div>
 
-        <label for="contraseña">Contraseña</label><br>
-        <input type="password" id="contraseña" name="contraseña">
-        <button type="button">Mostrar</button><br>
+            <input type="checkbox" id="recordarme" name="recordarme">
+            <label for="recordarme">Recordarme</label>
+            <a href="#">¿Olvidaste tu contraseña?</a><br>
 
-        <input type="checkbox" id="recordarme" name="recordarme" value="true">
-        <label for="recordarme">Recordarme</label>
-        <a href="">¿Olvidaste tu contraseña?</a><br>
+            <button type="submit">Iniciar sesión</button><br>
+            <p>O continuar con</p>
+        </form>
 
-        <button type="button">Iniciar sesión</button><br>
-        <p>O continuar con</p>
-        <button type="button"><img src="IconoGoogle.png">Google</button><br>
-        <button type="button"><img src="IconoFacebook.jpg">Facebook</button><br>
-        <button type="button"><img src="IconoApple.png">Apple</button><br>
-        <button type="button"><img src="IconoMicrosoft.png">Microsoft</button><br>
+        <a href="https://www.google.com/?hl=es&safe=active&ssui=on"><img src="IconoGoogle.png" alt="Logo Google"
+                width="10" height="10">Google</a> <!--alt sirve como texto alternativo si no hay imagen-->
+        <a href="https://www.google.com/?hl=es&safe=active&ssui=on"><img src="IconoFacebook.jpg" alt="Logo Facebook"
+                width="10" height="10">Facebook</a>
+        <a href="https://www.google.com/?hl=es&safe=active&ssui=on"><img src="IconoApple.png" alt="Logo Apple"
+                width="10" height="10">Apple</a>
+        <a href="https://www.google.com/?hl=es&safe=active&ssui=on"><img src="IconoMicrosoft.png" alt="Logo Microsoft"
+                width="10" height="10">Microsoft</a>
         <p>¿No tienes una cuenta? <a href="">Regístrate</a></p>
-    </form>
+    </main>
 </body>
 
 </html>
