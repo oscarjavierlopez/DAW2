@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lenguaje_27 - Tabla de multiplicar</title>
+</head>
+
+<body>
+    <h1>lenguaje_27 - Tabla de multiplicar</h1>
+    <hr />
+
+    <script type="text/javascript">
+        let num = prompt("Dime un número:");//el usuario verá hasta esa 
+        document.write("<table border='2'>");
+        for (let i = 1; i <= num; i++) {
+            document.write("<tr>");
+            for (let j = 1; j <= 10; j++) {
+                document.write("<td>" + i*j + "</td>")
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+
+</html>

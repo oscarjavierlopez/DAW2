@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lenguaje_33 - Ejercicio de arrays: obtener elementos sin repetir y ordenados</title>
+</head>
+
+<body>
+    <h1>lenguaje_33 - Ejercicio de arrays: obtener elementos sin repetir y ordenados</h1>
+    <p>Partiendo del array [4,0,3,4,7,3,5,8,1,8,8,0,2,3,1,2,5,7,3,2,5,1] crear un nuevo array con los elementos del
+        origilnal sin repetir y ordenado</p>
+    <script type="text/javascript">
+        let numeros1 = [4, 0, 3, 4, 7, 3, 5, 8, 1, 8, 8, 0, 2, 3, 1, 2, 5, 7, 3, 2, 5, 1, 11];
+        let numeros2 = [];
+        for (numero of numeros1) {
+            if (!numeros2.includes(numero)) {
+                numeros2.push(numero);
+            }
+        }
+
+        numeros2.sort((a, b) => a - b);
+        document.write(numeros2);
+    </script>
+</body>
+
+</html>
