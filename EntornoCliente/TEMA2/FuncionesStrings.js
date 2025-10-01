@@ -13,7 +13,7 @@ console.log("El unicode de la posición 3 es: " + cadena1.charCodeAt(3));//Devue
 console.log("La subcadena 'mundo' aparece por primera vez en la posición: " + cadena1.indexOf("mundo")); //Devuelve la posicion en la que aparece por primera vez la subcadena pasada(si no existe en la cadena1 dará como resultado la posicion -1) 
 console.log("La ultima vez que aparece 'a' es en  la posición: " + cadena2.lastIndexOf("a")); //Devuelve la posicion en la que aparece por última vez la subcadena pasada(si no existe en cadena2 dará como resultado -1)
 
-let cadena1Acortada = cadena1.substring(0 , 4) //devuelve la cadena 1 desde la posicion 0 hasta la 3(4-1)
+let cadena1Acortada = cadena1.substring(0, 4) //devuelve la cadena 1 desde la posicion 0 hasta la 3(4-1)
 console.log("La cadena 1 acortada queda así: " + cadena1Acortada);
 
 console.log("La cadena1 en mayusculas es: " + cadena1.toUpperCase()); //Convierte la cadena a mayus
@@ -21,19 +21,19 @@ console.log("La cadena1 en minúsculas es: " + cadena1.toLowerCase()); //Convier
 
 let palabras = cadena1.split(" "); //Devuelve un array(palabras) con las palabras de la cadena(usa como separador de palabra el espacio en blanco)
 console.log("Las palabras que contiene cadena1 son:")
-for(palabra of palabras){
+for (palabra of palabras) {
     console.log(palabra);
 }
 
-if(cadena1.endsWith("mundo")){ //evalua si una cadena acaba con la que le pasemos como parametro
+if (cadena1.endsWith("mundo")) { //evalua si una cadena acaba con la que le pasemos como parametro
     console.log("la cadena1 acaba con la palabra 'mundo'")
 }
 
-if(cadena1.startsWith("Hola")){//Evalua si una cadena empieza por otra que le pasamos
+if (cadena1.startsWith("Hola")) {//Evalua si una cadena empieza por otra que le pasamos
     console.log("La cadena 1 empieza con 'Hola'")
 }
 
-if(cadenaMezcla.includes("mundo")){ //Evalua si una cadena contiene otra que le pasamos por parametros
+if (cadenaMezcla.includes("mundo")) { //Evalua si una cadena contiene otra que le pasamos por parametros
     console.log("La cadena mezcla contiene la palabra 'mundo'")
 }
 
@@ -46,9 +46,10 @@ console.log("Datos2: " + datos2)
 
 console.log("La cadena 1 repetida es: " + cadena1.repeat(2)); //repite 2 veces la cadena 1
 
-console.log("Si reemplazamos mundo por js cadena 1 queda así: " + cadena1.replace("mundo", "js")); //reemplaza 'mundo' por 'js'
+console.log("Si reemplazamos mundo por js cadena 1 queda así: " + cadena1.replace("mundo", "js")); //reemplaza la primera ocurrencia 'mundo' por 'js'.
+//Si queremos remplazar todas => /mundo/g
 
 console.log("Cadena 1 sin espacios es: " + cadena1.trim()); //Elimina los espacios en blanco
 
-console.log("La cadena1 con huecos al principio es: " + cadena1.padStart(20,"*"));//Añade  * al inicio hasta que la longitud de la cadena sea 20
+console.log("La cadena1 con huecos al principio es: " + cadena1.padStart(20, "*"));//Añade  * al inicio hasta que la longitud de la cadena sea 20
 console.log("La cadena 1 con espacios al final es: " + cadena1.padEnd(20, "*")); //añade * al final hasta que la longitud de la cadena sea 20
