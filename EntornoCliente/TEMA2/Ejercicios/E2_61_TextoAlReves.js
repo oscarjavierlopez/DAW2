@@ -10,3 +10,4 @@ for (let i = 0; i < palabras.length; i++) {
 palabras = palabras.reverse();
 texto = palabras.join(" ");
 console.log(texto);
+
