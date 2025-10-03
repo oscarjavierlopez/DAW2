@@ -39,3 +39,8 @@ console.log("Desde el 1 de enero de 1970 hasta que te matriculaste en DAW han pa
 
 fechaMatricula.setDate(fechaMatricula.getDate() + 1) //cambiamos el valor del día de la fecha
 console.log("Te matriculaste el día " + fechaMatricula);
+
+//getMonth --> Obtiene el mes 0-11
+console.log("Te matriculaste el mes: " + fechaMatricula.getMonth() + " que es junio");
+
+//setMonth también usa meses de 0-11
