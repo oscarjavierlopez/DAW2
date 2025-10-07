@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGEX</title>
+</head>
+<body>
+    <script>
+        function comprobar(titulo, dato, expr){
+            if(expr.test(dato)){
+                alert(`${titulo} cumple`);
+            }else{
+                alert(`${titulo} no cumple`);
+            }
+        }
+
+        let nombre = prompt("Inserte su nombre");
+        let regexNombre = /^[A-Z][a-z]+$|^[A-Z][a-z]+\s[A-Z][a-z]+$/;
+        comprobar('nombre', nombre, regexNombre);
+        let apellidos = prompt("Inserte sus apellidos");
+        let regexApellidos = /^[A-Z][a-z]+\s[A-Z][a-z]+$/;
+        comprobar('apellidos', apellidos, regexApellidos);
+        let edad = prompt("Inserte su edad");
+        let regexEdad = /^[0-9]{1,2}$|^1[0-1][0-9]$|^120$/; //la maxima edad permitida son 120 años
+        comprobar('edad', edad, regexEdad);
+        let email = prompt("Inserte su email");
+        let regexEmail = /^[A-Za-z0-9_-]+@[a-z0-9]+\.[a-z]{2,3}$/;
+        comprobar('Email', email, regexEmail);
+        let telefono = prompt("Inserte su número de teléfono");
+        let regexTlf = /^6[0-9]{8}$|^9[0-9]{8}$/;
+        comprobar('teléfono', telefono, regexTlf);
+        let centro = prompt("Inserte su centro");
+        let regexCentro = /^.{5,120}$/;
+        comprobar('centro', centro, regexCentro);
+        let curso = prompt("Inserte su curso");
+        let regexCurso = /^[1-2]$/;
+        comprobar('curso', curso, regexCurso);
+        let observaciones = prompt("Inserte observaciones");
+        let regexObserv = /^[A-Za-z0-9]{120}$/;
+        comprobar('Observaciones', observaciones, regexObserv);
+        let anio = prompt("Inserte año en que cursó los estudios");
+        let regexAnio = /^20[0-2][0-5]$|^190[5-9]$|^19[1-9][0-9]$/;
+        comprobar('año', anio, regexAnio);
+    </script>
+</body>
+</html>
