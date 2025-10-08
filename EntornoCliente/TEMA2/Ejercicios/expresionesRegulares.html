@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REGEX</title>
 </head>
+
 <body>
+    <form>
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required
+            pattern="^[A-Z][a-z]+$|^[A-Z][a-z]+\s[A-Z][a-z]+$"><br><!--HTML en formularios permite validar expresiones regulares-->
+        <input type="submit" name="enviar" value="Enviar">
+    </form>
     <script>
-        function comprobar(titulo, dato, expr){
-            if(expr.test(dato)){
+        function comprobar(titulo, dato, expr) {
+            if (expr.test(dato)) {
                 alert(`${titulo} cumple`);
-            }else{
+            } else {
                 alert(`${titulo} no cumple`);
             }
         }
@@ -44,4 +52,5 @@
         comprobar('año', anio, regexAnio);
     </script>
 </body>
+
 </html>

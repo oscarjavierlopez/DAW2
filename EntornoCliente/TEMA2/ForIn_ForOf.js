@@ -7,3 +7,8 @@ console.log("Los números del array son:")
 for(numero of a){//itera sobre los elementos del array
     console.log(numero)
 }
+
+/*for([indice,numero] of a){
+    console.log(indice + " = " + numero);
+}*/ //No está permitido iterar sobre los indices de un array
+
