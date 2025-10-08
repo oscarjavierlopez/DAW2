@@ -37,7 +37,7 @@ for ([clave, valor] of alumnos) { //tmb se pde poner for(let[clave, valor] of al
 }
 
 console.log("Recorrido con for each:");
-alumnos.forEach(function(valor, clave){ //el primer parametro que paso a la funcion es el valor y el 2 la clave
+alumnos.forEach(function (valor, clave) { //el primer parametro que paso a la funcion es el valor y el 2 la clave
     console.log(clave + " = " + valor);
 })
 
