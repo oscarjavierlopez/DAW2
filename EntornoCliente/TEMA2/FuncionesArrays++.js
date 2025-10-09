@@ -288,3 +288,8 @@ var lista3 = Array.of(7, 5, 6);
 console.log(lista3);
 var lista4 = Array.of("casa");
 console.log(lista4);
+
+//Array.from() convierte un objeto iterable a un array
+letras = new Set(['a', 'a', 'b', 'c', 'd']); 
+let arrayLetras = Array.from(letras);
+console.log(arrayLetras);
