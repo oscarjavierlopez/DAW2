@@ -49,7 +49,7 @@ console.log("La cadena 1 repetida es: " + cadena1.repeat(2)); //repite 2 veces l
 console.log("Si reemplazamos mundo por js cadena 1 queda así: " + cadena1.replace("mundo", "js")); //reemplaza la primera ocurrencia 'mundo' por 'js'.
 //Si queremos remplazar todas => /mundo/g
 
-console.log("Cadena 1 sin espacios es: " + cadena1.trim()); //Elimina los espacios en blanco
+console.log("Cadena 1 sin espacios es: " + cadena1.trim()); //Elimina los espacios en blanco(al principio y al final)
 
 console.log("La cadena1 con huecos al principio es: " + cadena1.padStart(20, "*"));//Añade  * al inicio hasta que la longitud de la cadena sea 20
 console.log("La cadena 1 con espacios al final es: " + cadena1.padEnd(20, "*")); //añade * al final hasta que la longitud de la cadena sea 20
