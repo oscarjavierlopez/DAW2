@@ -12,7 +12,7 @@ function f2(nombre, edad) {
 }
 f2('Pepe'); 
 f2('Pepe', 20);
-f2('Pepe', 20, 20);
+f2('Pepe', 20, 20); //arguments guarda el tercer parámetro
 
 
 
