@@ -7,9 +7,10 @@ let f1 = (array) => array.map(numero => numero * 3)
 console.log(f1(a));
 
 /*Una funcion f2 q visualice en la consola los elementos q no sean divisibles por 2*/
-let f2 = (array) => console.log(array.filter((numero) => numero % 2 !== 0));
+console.log("IMPARES:");
+let f2 = (array) => array.filter((numero) => numero % 2 !== 0).
+    forEach(numero => console.log(numero));;
 f2(a);
-
 
 /*Una funcion f3 q devuelva la suma de todos los elementos q estén en posición par */
 let f3 = (array) => array.filter((valor, indice) => indice % 2 === 0)

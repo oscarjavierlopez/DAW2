@@ -32,12 +32,29 @@ suma(10, 10);
 let resta = (a, b) => `El resultado de la resta es: ${a - b}`; //el return es una string
 console.log(resta(10, 10));
 
-let sumatorio = (...valores) =>{
+let sumatorio = (...valores) => {
     let resultado = 0;
-    for(numero of valores){
+    for (numero of valores) {
         resultado += numero;
     }
     return resultado;
 }
 let numeros = [1, 2, 3, 4, 5];
 console.log(`El sumatorio de los 5 primeros números es: ${sumatorio(...numeros)}`);
+
+
+//Funcion que devuelve otra funcion
+function hello() {
+    console.log("Hola mundo");
+    return function () {
+        return "Hola interno"
+    };
+}
+hello(); // me imprime por consola "Hola mundo"
+console.log(hello()); //me devuelve la funcion interna(No su resultado)
+console.log(hello()()); //Me imprime por consola "Hola mundo" y me devuelve la cadena "Hola interno"
+
+
+//eval => Ejecuta el codigo que le pases como parametro
+let a = "a=3+2; console.log(a);"
+eval(a);
