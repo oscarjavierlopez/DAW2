@@ -16,9 +16,10 @@ if (isset($_POST['buscar'])) {
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 if ($row) {
                     //paginacion
-                    $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+                    $pagina = isset($_POST['pagina']) ? (int)$_POST['pagina'] : 1;
                     $porPagina = 25;
                     $offset = ($pagina - 1) * $porPagina;
+                    $provincia = $_POST['provincia']; 
 
                     $sql2 = "SELECT * 
                     FROM localidades 
@@ -45,9 +46,9 @@ if (isset($_POST['buscar'])) {
                         //navegacion entre paginas
                         echo '<div class="paginacion">';
                         if ($pagina > 1) {
-                            echo '<a href="BuscarProvincia.php?pagina=' . ($pagina - 1) . '&provincia=' . urlencode($_POST['provincia']) . '">Anterior</a>';
+                            echo '<a href="BuscarProvincia.php?pagina=' . ($pagina - 1) . '&provincia=' . urlencode($provincia) . '">Anterior</a>';
                         }
-                        echo '<a href="BuscarProvincia.php?pagina=' . ($pagina + 1) . '&provincia=' . urlencode($_POST['provincia']) . '">Siguiente</a>';
+                        echo '<a href="BuscarProvincia.php?pagina=' . ($pagina + 1) . '&provincia=' . urlencode($provincia) . '">Siguiente</a>';
                         echo '</div>';
                     } else {
                         echo "Error en la consulta.";

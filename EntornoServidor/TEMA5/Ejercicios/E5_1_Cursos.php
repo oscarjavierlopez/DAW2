@@ -42,9 +42,9 @@
                     echo '<td>' . $row['titulo'] . '</td>';
                     echo '<td>' . $row['plazas_totales'] . '</td>';
                     echo '<td>' . $row['plazas_disponibles'] . '</td>';
-                    echo '<form action="" method="post">';
-                    echo '<td><button type="submit" name="' . $row['id'] . '" value="Enviar">Añadir plaza</button></td>';
-                    echo '</form>';
+                    echo '<td><form action="" method="post">';
+                    echo '<input type="submit" name="' . $row['id'] . '" value="Añadir plaza">';
+                    echo '</form></td>';
                     echo '</tr>';
                 } else {
                     echo '<tr>';
@@ -52,7 +52,7 @@
                     echo '<td><s>' . $row['plazas_totales'] . '</s></td>';
                     echo '<td><s>' . $row['plazas_disponibles'] . '</s></td>';
                     echo '<form action="" method="post">';
-                    echo '<td><button type="submit" name="' . $row['id'] . '" value="Enviar">Añadir plaza</button></td>';
+                    echo '<td><input type="submit" name="' . $row['id'] . '" value="Añadir plaza"></td>';
                     echo '</form>';
                     echo '</tr>';
                 }
