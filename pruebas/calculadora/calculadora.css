@@ -1,0 +1,230 @@
+header {
+    display: flex;
+    gap: 180px;
+    justify-content: left;
+    align-items: center;
+    background-color: hsl(0, 9%, 83%);
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: hsl(0, 2%, 31%);
+    font-style: italic;
+    margin-left: 10px;
+}
+
+nav ul {
+    display: flex;
+    gap: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: hsl(0, 2%, 31%);
+    display: block;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+}
+
+li>a:hover {
+    font-weight: bold;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+
+.botones a {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 200px;
+    height: 30px;
+    align-content: center;
+    border-radius: 2px;
+    border: 2px solid rgb(151, 138, 138);
+}
+
+#iniciar-sesion {
+    background-color: white;
+    color: black;
+}
+
+#iniciar-sesion:hover {
+    background-color: hsl(0, 42%, 84%);
+}
+
+#registrarse {
+    background-color: rgb(44, 155, 199);
+    color: white;
+}
+
+#registrarse:hover {
+    background-color: rgb(38, 126, 161);
+
+}
+
+main {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculadora {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(254, 248, 248);
+    width: 400px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    grid-template-areas:
+        " input input input input"
+        "siete ocho nueve division"
+        "cuatro cinco seis multiplicacion"
+        "uno dos tres resta"
+        "cero punto c suma"
+        "igual igual . .";
+    padding: 20px;
+}
+
+input {
+    grid-area: input;
+    border: 1px solid rgb(164, 154, 154);
+    font-size: 20px;
+}
+
+input:focus{
+    outline: 2px solid hsl(229, 59%, 45%);
+}
+
+#uno {
+    grid-area: uno;
+}
+
+#dos {
+    grid-area: dos;
+}
+
+#tres {
+    grid-area: tres;
+}
+
+#cuatro {
+    grid-area: cuatro;
+}
+
+#cinco {
+    grid-area: cinco;
+}
+
+#seis {
+    grid-area: seis;
+}
+
+#siete {
+    grid-area: siete;
+}
+
+#ocho {
+    grid-area: ocho;
+}
+
+#nueve {
+    grid-area: nueve;
+}
+
+#cero {
+    grid-area: cero;
+}
+
+#c {
+    grid-area: c;
+}
+
+#suma {
+    grid-area: suma;
+}
+
+#resta {
+    grid-area: resta;
+}
+
+#multiplicacion {
+    grid-area: multiplicacion;
+}
+
+#division {
+    grid-area: division;
+}
+
+#punto {
+    grid-area: punto;
+}
+
+#igual {
+    grid-area: igual;
+}
+
+button {
+    background-color: rgb(222, 189, 189);
+    border: 1.5px solid hsl(0, 25%, 76%);
+    font-size: 20px;
+}
+
+button:hover,
+button:active {
+    background-color: rgb(116, 108, 108);
+}
+
+
+#suma,
+#resta,
+#multiplicacion,
+#division,
+#c {
+    background-color: hsl(40, 81%, 44%);
+    color: white;
+    
+}
+
+#suma:hover,
+#resta:hover,
+#multiplicacion:hover,
+#division:hover,
+#c:hover {
+    background-color: hsl(30, 88%, 42%);
+    color: white;
+    
+}
+
+
+#igual{
+    background-color: hsl(229, 39%, 38%);
+    color: white;
+}
+
+#igual:hover{
+    background-color: hsl(229, 65%, 61%);
+    color: white;
+}
