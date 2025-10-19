@@ -1,0 +1,59 @@
+main {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+section {
+    border: 2px solid black;
+    box-sizing: content-box;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    overflow: hidden;
+    padding: 0px;
+}
+
+
+section #p1 {
+    margin: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(136, 136, 185);
+    z-index: 100;
+    width: inherit;
+    height: inherit;
+
+}
+
+section #p2 {
+    margin: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: inherit;
+    height: inherit;
+}
+
+section:hover #p1 {
+    margin: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: inherit;
+    height: inherit;
+}
+
+section:hover #p2 {
+    margin: 0px;
+    background-color: rgb(206, 170, 105);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: inherit;
+    height: inherit;
+}
