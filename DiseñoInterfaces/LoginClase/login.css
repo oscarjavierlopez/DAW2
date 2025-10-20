@@ -66,9 +66,7 @@ h1 {
     text-align: center;
 }
 
-.recordarme {
-    grid-area: recordarme;
-}
+
 
 #iniciar-sesion {
     grid-area: iniciar-sesion;
@@ -176,9 +174,11 @@ label {
 }
 
 .recordarme {
+    grid-area: recordarme;
     display: flex;
     gap: 5px;
-    align-items: center;
+    align-items: center ;
+    justify-content: space-between; /*Pone el primer elemento al inicio del eje horizontal y el último al final del eje horizontal*/
 }
 
 #olvido-contraseña {
