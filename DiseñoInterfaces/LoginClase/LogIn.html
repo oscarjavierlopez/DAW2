@@ -5,40 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LogIn</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
     <main>
-        <form action="procesar.php" method="post" autocomplete="on">
+        <form action="" method="post" autocomplete="on">
             <h1>Iniciar Sesión</h1>
-            <div>
+            <div class="correo">
                 <label for="correo">Correo electrónico</label>
-                <input type="email" id="correo" name="correo">
+                <input type="email" id="correo" name="correo" required>
             </div>
 
-            <div>
+            <div class="contraseña">
                 <label for="contraseña">Contraseña</label>
-                <input type="password" id="contraseña" name="contraseña">
-                <button type="button">Mostrar</button>
+                <input type="password" id="contraseña" name="contraseña" required>
+                <p>8 caracteres minimo</p>
+                <button type="button" id="mostrar">Mostrar</button>
             </div>
 
-            <input type="checkbox" id="recordarme" name="recordarme">
-            <label for="recordarme">Recordarme</label>
-            <a href="#">¿Olvidaste tu contraseña?</a><br>
+            <div class="recordarme">
+                <input type="checkbox" id="recordarme" name="recordarme">
+                <label for="recordarme">Recordarme</label>
+                <a href="#">¿Olvidaste tu contraseña?</a><br>
+            </div>
 
-            <button type="submit">Iniciar sesión</button><br>
-            <p>O continuar con</p>
+            <button type="submit" id="iniciar-sesion">Iniciar sesión</button><br>
+            <p id="continuar">O continuar con</p>
+            <a href="https://www.google.com/?hl=es&safe=active&ssui=on" id="google"><img src="IconoGoogle.png"
+                    alt="Logo Google" width="10" height="10">Google</a>
+            <!--alt sirve como texto alternativo si no hay imagen-->
+            <a href="https://www.google.com/?hl=es&safe=active&ssui=on" id="facebook"><img src="IconoFacebook.jpg"
+                    alt="Logo Facebook" width="10" height="10">Facebook</a>
+            <a href="https://www.google.com/?hl=es&safe=active&ssui=on" id="apple"><img src="IconoApple.png"
+                    alt="Logo Apple" width="10" height="10">Apple</a>
+            <a href="https://www.google.com/?hl=es&safe=active&ssui=on" id="microsoft"><img src="IconoMicrosoft.png"
+                    alt="Logo Microsoft" width="10" height="10">Microsoft</a>
+            <div class="no-cuenta">
+                <p id="no-cuenta">¿No tienes una cuenta? <a href="" id="registrate">Regístrate</a></p>
+            </div>
         </form>
-
-        <a href="https://www.google.com/?hl=es&safe=active&ssui=on"><img src="IconoGoogle.png" alt="Logo Google"
-                width="10" height="10">Google</a> <!--alt sirve como texto alternativo si no hay imagen-->
-        <a href="https://www.google.com/?hl=es&safe=active&ssui=on"><img src="IconoFacebook.jpg" alt="Logo Facebook"
-                width="10" height="10">Facebook</a>
-        <a href="https://www.google.com/?hl=es&safe=active&ssui=on"><img src="IconoApple.png" alt="Logo Apple"
-                width="10" height="10">Apple</a>
-        <a href="https://www.google.com/?hl=es&safe=active&ssui=on"><img src="IconoMicrosoft.png" alt="Logo Microsoft"
-                width="10" height="10">Microsoft</a>
-        <p>¿No tienes una cuenta? <a href="">Regístrate</a></p>
     </main>
 </body>
 

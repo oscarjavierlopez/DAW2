@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color:  rgb(236, 227, 227);;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 100px;
+}
+
+form {
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid rgb(178, 172, 172);
+    box-shadow: 5px 5px 10px 5px rgba(143, 128, 128, 0.3);
+    width: 30rem;
+    max-width: 450px;
+    height: 50rem;
+    display: grid;
+    grid-template-rows: repeat(11, minmax(0, 1fr));
+    grid-template-areas: "h1"
+        "correo"
+        "contraseña"
+        "recordarme"
+        "iniciar-sesion"
+        "continuar"
+        "google"
+        "facebook"
+        "apple"
+        "microsoft"
+        "no-cuenta";
+    gap: 15px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 30px;
+    grid-area: h1;
+    text-align: center;
+}
+
+.correo {
+    grid-area: correo;
+}
+
+.contraseña {
+    grid-area: contraseña;
+    position: relative;
+}
+
+.contraseña input{
+    position: absolute;
+    top: 18px;
+}
+
+.contraseña p{
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    text-align: center;
+}
+
+.recordarme {
+    grid-area: recordarme;
+}
+
+#iniciar-sesion {
+    grid-area: iniciar-sesion;
+    width: 100%;
+    height: 2.5rem;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: rgb(71, 115, 218);
+    border: 0.5px solid rgb(164, 160, 160);
+}
+
+#continuar {
+    grid-area: continuar;
+    text-align: center;
+}
+
+#google {
+    grid-area: google;
+}
+
+#facebook {
+    grid-area: facebook;
+}
+
+#apple {
+    grid-area: apple;
+}
+
+#microsoft {
+    grid-area: microsoft;
+}
+
+#no-cuenta {
+    grid-area: no-cuenta;
+}
+
+p {
+    display: inline;
+    color: rgb(171, 165, 165);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    border: 0.5px solid rgb(205, 197, 197);
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+input {
+    width: 100%;
+    height: 2rem;
+    border: 0.5px solid rgb(205, 197, 197);
+}
+
+input:focus {
+    outline: 2px solid red;
+}
+
+label {
+    display: block;
+}
+
+#mostrar {
+    display: inline;
+}
+
+#registrate{
+    text-decoration: underline;
+    border: 0;
+    color: blue;
+}
+
+#no-cuenta{
+    color: black;
+}
