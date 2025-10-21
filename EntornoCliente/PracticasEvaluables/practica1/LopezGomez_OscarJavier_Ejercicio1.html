@@ -71,9 +71,11 @@
                 }
                 break;
             case '4':
+                let resultado = "";
                 for ([clave, valor] of usuarios) {
-                    alert(clave + " = " + valor);
+                    resultado += clave + " => " + valor + '\n';
                 }
+                alert(resultado);
                 break;
             default:
                 alert("opcion no valida");
