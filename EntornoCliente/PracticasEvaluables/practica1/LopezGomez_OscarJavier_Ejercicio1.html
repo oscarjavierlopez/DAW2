@@ -13,74 +13,85 @@
             ["Oscar Lopez Gomez", "oscarLG"],
             ["Pepe Lopez Gomez", "pepeLG"]
         ]);
-        let opcion = prompt("Menú: \n 1. Añadir usuario (comprobando previamente si existe o no) \n 2. Modificar usuario \n 3. Eliminar un usuario \n 4. Mostrar la colección entera de usuarios y con su nombre de usuario");
-        let nombreApellidos = "";
-        let contraseña = "";
-        switch (opcion) {
-            case '1':
-                nombreApellidos = prompt("Inserte nombre y apellidos:");
-                if (!usuarios.has(nombreApellidos)) {
-                    alert("Tamaño: " + nombreApellidos.split("").filter((caracter) => caracter !== " ").length);
-                    alert("Cadena en mayusculas: " + nombreApellidos.toUpperCase() + " Cadena en minúsculas: " + nombreApellidos.toLowerCase());
-                    let palabras = nombreApellidos.split(" ");
-                    alert("Nombre: " + palabras[0] + '\n'
-                        + "apellido 1: " + palabras[1] + '\n'
-                        + "apellido 2: " + palabras[2]
-                    );
-                    let opcionContraseña = prompt(" 1. Nombre completo + Iniciales apellidos \n2. Dos iniciales de nombre y de los dos apellidos\n 3. Letra de nombre + posición ");
-                    contraseña = "";
-                    switch (opcionContraseña) {
-                        case '1':
-                            contraseña = palabras[0].toLowerCase() + palabras[1][0].toUpperCase() + palabras[2][0].toUpperCase();
-                            alert("Tu contraseña es: " + contraseña);
-                            break;
-                        case '2':
-                            contraseña = palabras[0][0].toUpperCase() + palabras[0][1].toUpperCase() + palabras[1][0].toLowerCase() + palabras[1][1].toLowerCase() + palabras[2][0].toLowerCase() + palabras[2][1].toLowerCase();
-                            alert("Tu contraseña es: " + contraseña);
-                            break;
-                        case '3':
-                            for (let i = 0; i < palabras[0].length; i++) {
-                                contraseña += palabras[0][i] + i;
-                            }
-                            alert("Tu contraseña es: " + contraseña);
-                            break;
-                        default:
-                            alert("opcion no valida");
-                            break;
+        let opcion = 0;
+        do {
+            opcion = prompt("Menú: \n 1. Añadir usuario (comprobando previamente si existe o no) \n 2. Modificar usuario \n 3. Eliminar un usuario \n 4. Mostrar la colección entera de usuarios y con su nombre de usuario \n 5.salir");
+            let nombre = "";
+            let apellido1 = "";
+            let apellido2 = "";
+            let nombreApellidos = "";
+            let contraseña = "";
+            switch (opcion) {
+                case '1':
+                    nombre = prompt("Inserte nombre:");
+                    apellido1 = prompt("Inserte primer apellido:");
+                    apellido2 = prompt("Inserte segundo apellido:");
+                    nombreApellidos = nombre + " " + apellido1 + " " + apellido2;
+                    if (!usuarios.has(nombreApellidos)) {
+                        alert("Tamaño: " + nombreApellidos.split("").filter((caracter) => caracter !== " ").length);
+                        alert("Cadena en mayusculas: " + nombreApellidos.toUpperCase() + " Cadena en minúsculas: " + nombreApellidos.toLowerCase());
+                        alert("Nombre: " + nombre + '\n'
+                            + "apellido 1: " + apellido1 + '\n'
+                            + "apellido 2: " + apellido2
+                        );
+                        let opcionContraseña = prompt(" 1. Nombre completo + Iniciales apellidos \n2. Dos iniciales de nombre y de los dos apellidos\n 3. Letra de nombre + posición ");
+                        contraseña = "";
+                        switch (opcionContraseña) {
+                            case '1':
+                                contraseña = nombre.toLowerCase() + apellido1.charAt(0).toUpperCase() + apellido2.charAt(0).toUpperCase();
+                                alert("Tu contraseña es: " + contraseña);
+                                break;
+                            case '2':
+                                contraseña = nombre.charAt(0).toUpperCase() + nombre.charAt(1).toUpperCase() + apellido1.charAt(0).toLowerCase() + apellido1.charAt(1).toLowerCase() + apellido2.charAt(0).toLowerCase() + apellido2.charAt(1).toLowerCase();
+                                alert("Tu contraseña es: " + contraseña);
+                                break;
+                            case '3':
+                                for (let i = 0; i < nombre.length; i++) {
+                                    contraseña += nombre.charAt(i) + i;
+                                }
+                                alert("Tu contraseña es: " + contraseña);
+                                break;
+                            default:
+                                alert("opcion no valida");
+                                break;
+                        }
+                        usuarios.set(nombreApellidos, contraseña);
+                    } else {
+                        alert("Usuario ya insertado");
                     }
-                    usuarios.set(nombreApellidos, contraseña);
-                } else {
-                    alert("Usuario ya insertado");
-                }
-                break;
-            case '2':
-                nombreApellidos = prompt("Nombre usuario:");
-                if (usuarios.has(nombreApellidos)) {
-                    contraseña = prompt("contraseña:");
-                    usuarios.set(nombreApellidos, contraseña);
-                } else {
-                    alert("Ese usuario no existe");
-                }
-                break;
-            case '3':
-                nombreApellidos = prompt("Nombre usuario");
-                if (usuarios.has(nombreApellidos)) {
-                    usuarios.delete(nombreApellidos);
-                } else {
-                    alert("Ese usuario no existe");
-                }
-                break;
-            case '4':
-                let resultado = "";
-                for ([clave, valor] of usuarios) {
-                    resultado += clave + " => " + valor + '\n';
-                }
-                alert(resultado);
-                break;
-            default:
-                alert("opcion no valida");
-                break;
-        }
+                    break;
+                case '2':
+                    nombreApellidos = prompt("Nombre usuario:");
+                    if (usuarios.has(nombreApellidos)) {
+                        contraseña = prompt("contraseña:");
+                        usuarios.set(nombreApellidos, contraseña);
+                    } else {
+                        alert("Ese usuario no existe");
+                    }
+                    break;
+                case '3':
+                    nombreApellidos = prompt("Nombre usuario");
+                    if (usuarios.has(nombreApellidos)) {
+                        usuarios.delete(nombreApellidos);
+                    } else {
+                        alert("Ese usuario no existe");
+                    }
+                    break;
+                case '4':
+                    let resultado = "";
+                    for ([clave, valor] of usuarios) {
+                        resultado += clave + " => " + valor + '\n';
+                    }
+                    alert(resultado);
+                    break;
+                case '5':
+                    alert('Has elegido salir');
+                    break;
+                default:
+                    alert("opcion no valida");
+                    break;
+            }
+        } while (opcion != 5);
     </script>
 </body>
 
