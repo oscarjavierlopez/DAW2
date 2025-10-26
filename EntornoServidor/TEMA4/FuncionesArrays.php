@@ -73,3 +73,7 @@ valor.
 • ksort(array) ordena un array asociativo en orden ascendente por la clave.
 • krsort(array) ordena un array asociativo en orden descendiente por la
 clave. */
+
+//unset() => Elimina una posicion del array
+unset($numeros[0]); //Elimina el elemento en la posicion 0
+$numeros = array_values($numeros); //tras eliminar hay q reindexar el array

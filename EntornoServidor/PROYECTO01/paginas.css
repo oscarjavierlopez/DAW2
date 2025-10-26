@@ -1,0 +1,140 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    --verde: rgb(20, 212, 36);
+    --naranja: rgb(216, 137, 59);
+    --naranja-hover: rgb(166, 102, 37);
+}
+
+main {
+    position: absolute;
+    top: 100px;
+}
+
+main.productos {
+    position: absolute;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 2px solid rgb(112, 103, 103);
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    height: 300px;
+}
+
+form h2 {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--verde);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+nav ul{
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+}
+nav ul li{
+    list-style: none;
+}
+
+h1 {
+    margin: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover{
+    color: rgb(196, 188, 188);
+}
+
+form p {
+    color: red;
+}
+
+form input {
+    padding: 5px;
+}
+
+form input:focus {
+    outline: 2px solid var(--naranja);
+    border: 2px solid rgb(230, 223, 223);
+}
+
+form input[type="submit"], button {
+    color: white;
+    background-color: var(--verde);
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+form input[type="submit"]:hover, button:hover{
+    background-color: rgb(124, 228, 133);
+}
+
+button[id="realizarPedido"]{
+    background-color: var(--naranja);
+}
+
+button[id="realizarPedido"]:hover{
+    background-color: var(--naranja-hover);
+}
+
+.pedidoRealizado{
+    background-color: var(--verde);
+}
+
+
+.categorias {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form.categorias,
+form.productos {
+    border: none;
+    height: auto;
+}
+
+form.categorias input {
+    border: 2px solid black;
+    background-color: var(--naranja);
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+form.categorias input:hover {
+    background-color: var(--naranja-hover);
+}
+
+th,
+td {
+    height: 30px;
+    text-align: left;
+    padding: 10px;
+}
+

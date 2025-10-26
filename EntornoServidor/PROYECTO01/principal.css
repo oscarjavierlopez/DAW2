@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(20, 212, 36);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%
+}
+h1{
+    margin: 10px;
+    color: white;
+}
+
+nav a{
+    margin: 10px;
+    padding: 5px;
+    background-color: rgb(216, 137, 59);
+    color: white;
+    text-decoration: none;
+    border: 2px solid black;
+    width: 100px;
+    text-align: center;
+    height: 20px;
+}
+
+nav a:hover{
+    background-color: rgb(166, 102, 37);
+}
