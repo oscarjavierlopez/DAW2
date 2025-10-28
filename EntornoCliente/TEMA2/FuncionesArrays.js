@@ -41,10 +41,20 @@ console.log("Array vacío: " + vacio);
 
 numeros.splice(4); //Elimina de la posicion 4 hasta el final
 console.log("Eliminando desde la posicion 4: " + numeros);
-numeros.splice(0,1); //Borra 1 posicion desde la posicion 0 
+numeros.splice(0,1); //Borra de la posicion 0 a la posicion 1(la 0)
 console.log("Eliminando de la posicion 0 a la 1: " + numeros);
 numeros.splice(1,1,4.5); //Reemplaza el elemento en la posicion 1 por un 4.5
 console.log("Reemplazando la posicion 1 por un 4.5: " + numeros);
 numeros.splice(1,0,5); //Añade un 5 en la posicion 1 sin eliminar nada 
 console.log("Añadiendo un 5 en la posición 1: " + numeros);
 
+//relleno con fill => fill(valorRelleno, indice inicio, indice fin)
+let arrayGrande = new Array(50); //antes de usar el metodo fill hay que especifiar la longitud del array
+arrayGrande.fill(0, 0, 49);
+console.log('Fill: ' + arrayGrande);
+
+//Delete => elimina el CONTENIDO de una posicion q se le pase pero NO ELIMINA SU INDICE(la posicion queda vacía)
+let diasSemana = ['Lunes', 'Martes', 'Miércoles', 'jueves', 'viernes', 'Sábado', 'domingo'];
+console.log('¿se eliminó la posición 0? ' + delete diasSemana[0]); //devuelve true si borró el contenido
+console.log("Delete: " + diasSemana);
+console.log(diasSemana.length); //La longitud sigue siendo de 7 xk el indice queda reservado

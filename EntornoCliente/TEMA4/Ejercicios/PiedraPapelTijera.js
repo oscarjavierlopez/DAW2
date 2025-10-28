@@ -1,5 +1,5 @@
 let posibilidades = ["piedra", "papel", "tijera"];
-let p1 = posibilidades[Math.round(Math.random() * 2)]; //para asociar un numero a una cadna conviene usar un array y sus indices 
+let p1 = posibilidades[Math.round(Math.random() * 2)]; //para asociar un numero a una cadena conviene usar un array y sus indices 
 let p2 = posibilidades[Math.round(Math.random() * 2)];
 
 
