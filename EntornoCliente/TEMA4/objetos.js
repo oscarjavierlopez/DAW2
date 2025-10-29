@@ -12,7 +12,7 @@ empleado.sexo = "femenino"; //puedo añadir nuevas propiedad1es dinamicamente
 console.log(empleado.sexo);
 console.log(empleado.nombre);
 empleado["Trabajador temporal"] = false;
-console.log(empleado["Trabajador temporal"]); //Se puede acceder a propiedad1es con corchetes
+console.log(empleado["Trabajador temporal"]); //Se puede acceder a propiedades con corchetes
 console.log(empleado.domicilio.poblacion);
 delete empleado.edad;
 console.log(empleado.edad); //undefined xk la hemos eliminado
@@ -60,9 +60,9 @@ console.log(clienteCopia);
 const clienteCopia2 = {apellido: 'García', ...cliente}; //tmb puedo añadir nuevas propiedades
 console.log(clienteCopia2);
 
-const clienteCopia3 = Object.assign(cliente); //con asign la copia y el cliente apuntan a la misma direcc de memoria
+const clienteCopia3 = Object.assign(cliente); //con asign(objeto) la copia y el cliente apuntan a la misma direcc de memoria
 cliente.nombre = 'Rosa'; //si cambio el nombre en cliente se cambia en clienteCopia3
-console.log(clienteCopia3);
+console.log(clienteCopia3); //Es lo mismo q hacer clienteCopia3 = cliente
 
 const clienteCopia4 = cliente; //cliente4 y cliente apuntan a la misma direcc de memoria
 cliente.saldo = 1800;

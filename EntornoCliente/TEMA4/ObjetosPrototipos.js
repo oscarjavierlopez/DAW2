@@ -13,7 +13,7 @@ console.log(student.nombre); //Luis => Se queda con la propiedad nombre del obje
 
 console.log('Propiedades de student con for in:'); 
 for(const key in student){
-    console.log(`${key}: ${student[key]}`); //for in => muestra las propiedades del objeto y las de sus prototipos
+    console.log(`${key}: ${student[key]}`); //for in => muestra las propiedades del objeto y las de sus padres
 }
 
 console.log('Propiedades de student con for of:'); 
