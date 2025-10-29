@@ -9,7 +9,7 @@ console.log(person);
 console.log(student);
 console.log(customer);
 
-//Object.assign() => Copia propiedades
+//Object.assign() => Copia propiedades pero no establece prototipo
 const persona = {name: 'Pepe', age: 23};
 const datos = {altura: 160};
 const estudiante = Object.assign({}, person, datos);
