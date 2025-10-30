@@ -18,3 +18,4 @@ console.log(persona);
 console.log(estudiante);
 console.log(Object.getPrototypeOf(estudiante)); //el prototipo es object
 
+
