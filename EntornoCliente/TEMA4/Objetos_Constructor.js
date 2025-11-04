@@ -9,7 +9,7 @@ const persona2 = new Persona(); //inicializa los valores por defecto
 console.log(persona2);
 
 
-//En el constructor sólo se añaden atributos, para añadir métodos:
+//En el constructor sólo se añaden atributos, los métodos es mejor declararlos en el prototipo:
 Persona.prototype.visualizarNombre = function(){ //con .prototype accedo al prototipo de persona y le inserto el metodo visualizarNombre
     console.log(this.nombre);
 };

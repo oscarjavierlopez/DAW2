@@ -23,7 +23,7 @@ let figura = {
             colocarPieza(figura, tablero)
         }
     }
-}
+};
 
 let rey = Object.create(figura);
 rey.tipo = 'K';
