@@ -1,4 +1,4 @@
-import { Vehiculo } from "./Vehiculo";
+import { Vehiculo } from "./Vehiculo.js";
 export class Turismo extends Vehiculo{
     #color;
     constructor(pasajeros, color){
