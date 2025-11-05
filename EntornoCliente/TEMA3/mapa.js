@@ -1,4 +1,4 @@
-let alumnos = new Map([
+let alumnos = new Map([ //NO USAR COMO CLAVE PALABRAS SEPARADAS
     [1, "Pepe"],
     [2, "Juan"],
     [3, "Sofía"]

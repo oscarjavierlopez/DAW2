@@ -40,5 +40,12 @@ function mostrarVehiculos(vehiculos) {
 }
 
 let vehiculos = [];
-generarVehiculos(vehiculos);
-mostrarVehiculos(vehiculos);
+let c = 0;
+const id = setInterval(function () {
+    generarVehiculos(vehiculos);
+    mostrarVehiculos(vehiculos); //la fn capturar reloj se invoca desde el mostrar
+    vehiculos = [];
+    if (c++ === 10) {
+        clearInterval(id);
+    }
+}, 2000);
