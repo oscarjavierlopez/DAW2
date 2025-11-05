@@ -18,8 +18,9 @@ console.log(rioB.imprimePoblaciones());
 
 
 rioB.modificarCaudalMedio(150);
-let rios = [new Rio('Zapardiel', 'Cuenca Atlántica'), rioA, rioB];
+let rios = [new Rio('Zapardiel', 'Cuenca Atlántica'), rioA, new Rio('Miño', 'Atlántica'), rioB, new Rio('Adajar', 'Cuenca Atlántica')];
 rios.sort(Rio.ordenar_por_caudal); //ordena de forma ascendente los caudales
+//Los ríos sin caudal los añade al principio
 rios.forEach((rio) => console.log(rio.imprimeNombre()));
 
 

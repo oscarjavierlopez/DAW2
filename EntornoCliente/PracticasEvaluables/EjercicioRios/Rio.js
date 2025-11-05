@@ -10,7 +10,13 @@ export class Rio {
     }
 
     static ordenar_por_caudal(rioA, rioB){
-        return rioA.imprimeCaudal() - rioB.imprimeCaudal() ;
+        let caudalA = rioA.caudal !== undefined ? rioA.caudal : 0;
+        let caudalB = rioB.caudal !== undefined ? rioB.caudal : 0;
+        return caudalA - caudalB;
+    }
+
+    get caudal(){
+        return this.#caudalMedio;
     }
 
     agregarPoblacion(v_poblacion) {
