@@ -1,0 +1,10 @@
+import { Padre } from "./Padre.js";
+import { Hijo } from "./Hijo.js";
+const papa = new Padre("Pepe", "Ruíz", "Seat ibiza");
+const hijo = new Hijo("Juan", "Ruíz");
+console.log(papa.coche);
+console.log(hijo.moto);
+hijo.comer();
+hijo.cenar();
+papa.comer();
+papa.cenar();
