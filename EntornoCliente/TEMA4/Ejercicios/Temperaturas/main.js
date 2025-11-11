@@ -60,6 +60,7 @@ function toHTML() {
 let ciudades = [];
 let oviedo = new Ciudad("Oviedo");
 oviedo.rellenarTemperaturas();
+oviedo.modificarTemperatura(5, 30);
 let santander = new Ciudad("Santander");
 santander.rellenarTemperaturas();
 ciudades.push(oviedo);

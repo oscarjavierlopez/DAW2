@@ -1,3 +1,9 @@
+body{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+}
 table, td{
     border: 2px solid black;
     border-collapse: collapse;
