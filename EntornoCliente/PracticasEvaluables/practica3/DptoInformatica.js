@@ -1,4 +1,3 @@
-import { Aula } from "./Aula.js";
 export class DptoInformatica {
     #aulas;
 
@@ -6,7 +5,7 @@ export class DptoInformatica {
         this.#aulas = new Map();
     }
 
-    get aulas(){
+    get aulas() {
         return this.#aulas;
     }
 
@@ -19,10 +18,11 @@ export class DptoInformatica {
     }
 
     getUbicacion(idEquipo) {
-        for ([numAula, aula] of this.#aulas) {
-            posicion = aula.getPosicion(idEquipo);
-            if (posicion !== null) {
-                return `Aula número: ${numAula}, Fila: ${posicion[0]}, Columna: ${posicion[1]}`;
+        for (let [numAula, aula] of this.#aulas) {
+            let posicion = aula.getPosicion(idEquipo);
+            if (posicion) {
+                let [fila, columna] = posicion
+                return `Aula número: ${numAula}, Fila: ${fila}, Columna: ${columna}`;
             }
         }
 
@@ -35,7 +35,7 @@ export class DptoInformatica {
         for (let aula of this.#aulas.values()) {
             for (let i = 0; i < aula.equipos.length; i++) {
                 for (let j = 0; j < aula.equipos[i].length; j++) {
-                    if (this.aula.equipos[i][j] !== null) {
+                    if (aula.equipos[i][j]) {
                         contador++;
                     }
                 }
@@ -44,6 +44,10 @@ export class DptoInformatica {
         return contador;
     }
 }
+
+
+
+
 
 
 

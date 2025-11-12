@@ -1,4 +1,3 @@
-
 export class Aula {
     #numero;
     #equipos;
@@ -23,7 +22,7 @@ export class Aula {
         return this.#numero;
     }
 
-    get equipos(){
+    get equipos() {
         return this.#equipos;
     }
 
@@ -33,16 +32,19 @@ export class Aula {
                 if (fila === i && columna === j) {
                     this.#equipos[i][j] = equipo;
                     return true;
+                } else if (fila === i && columna >= this.#equipos[i].length && equipo.personal) {
+                    this.#equipos[i][columna] = equipo;
                 }
             }
         }
+
         return false;
     }
 
     getPosicion(idEquipo) {
         for (let i = 0; i < this.#equipos.length; i++) {
             for (let j = 0; j < this.#equipos[i].length; j++) {
-                if (this.#equipos[i][j].toString() === idEquipo) {
+                if (this.#equipos[i][j] && this.#equipos[i][j].toString() === idEquipo) {
                     return [i, j];
                 }
             }
@@ -60,7 +62,7 @@ export class Aula {
             }
         }
 
-        return(contador * 100 / this.#puestos);
+        return (contador * 100 / this.#puestos);
     }
 }
 

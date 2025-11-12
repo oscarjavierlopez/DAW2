@@ -23,27 +23,32 @@ console.log("\n%cRECUENTO TOTAL EQUIPOS dptoNaranco: " + dptoNaranco.getNEquipos
 
 console.log("%cACTIVANDO EQUIPOS DE SOBREMESA QUE SE VAN A USAR...", 'background: #222; color: #bada55');
 asignaciones.forEach((asignacion) => {
-    let aula = dptoNaranco.Aulas.get(asignacion.aula).aula;
+    let aula = dptoNaranco.aulas.get(asignacion.aula);
     for (let i = 0; i < FILAS; i++)
         for (let j = 0; j < COLUMNAS; j++)
-            aula.activaEquipo(new Equipo("Descripción equipo " + aula.Numero + "-" + i + "-" + j, false), i, j);
+            aula.activaEquipo(new Equipo("Descripción equipo " + aula.numero + "-" + i + "-" + j, false), i, j);
 });
 
 asignaciones.forEach((asignacion) => {
-    console.table(dptoNaranco.Aulas.get(asignacion.aula).aula.Equipos);
-    console.log("Porcentaje de ocupación tras asignaciones aula " + asignacion.aula + ":" + dptoNaranco.Aulas.get(asignacion.aula).aula.getPorcentajeOcupacion() + "%");
+    console.table(dptoNaranco.aulas.get(asignacion.aula).equipos);
+    console.log("Porcentaje de ocupación tras asignaciones aula " + asignacion.aula + ":" + dptoNaranco.aulas.get(asignacion.aula).getPorcentajeOcupacion() + "%");
 });
 
 function datosPortatiles() {
-    let letra = 'C';
+    let letra;
     do {
-        let aula = prompt("Aula:");
+        let aula = prompt("Aula destino:");
         let descripcion = prompt("Descripcion");
-        let fila = prompt("fila:");
-        let columna = prompt("columna:");
-        let dias = prompt("Nº días:");
-        let letra = prompt("Introduzca una letra distinta de 's' para continuar");
-    } while (letra !== 'S' || letra !== 's');
+        let fila = parseInt(prompt("fila:"));
+        let columna = parseInt(prompt("columna:"));
+        let dias = parseInt(prompt("Nº días:"));
+        if (dptoNaranco.aulas.has(aula)) {
+            console.log(dptoNaranco.aulas.get(aula).activaEquipo(new Equipo(descripcion, true, dias), fila, columna));
+        }else{
+            console.log(false);
+        }
+        letra = prompt("Introduzca la letra 's' para salir");
+    } while (letra != 'S' && letra != 's');
     console.log("%cACTIVANDO PORTÁTILES QUE SE VAN A USAR...", 'background: #222; color: #bada55');
 }
 
