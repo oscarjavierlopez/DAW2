@@ -22,3 +22,26 @@ const { trabajo, pais, nombre } = persona;
 console.log(nombre);
 console.log(trabajo);
 console.log(pais);
+
+//Desestructurar múltiples valores en una sola línea
+const person = {
+    nombre: 'Sarah',
+    lugar: {
+        pais: 'Nigeria',
+        ciudad: 'Lagos'
+    },
+    amigas: ['Annie', 'Becky']
+}
+
+// Aquí el ':' renombra la propiedad 'nombre' a la variable 'n'
+const { nombre: n } = person;
+console.log(n);
+
+//Aquí ':' redirige la desestructuracion a una variable llamada Annie
+const{ amigas: [Annie] } = person;
+console.log(Annie);
+
+const{ lugar: {ciudad} } = person;
+console.log(ciudad);
+
+

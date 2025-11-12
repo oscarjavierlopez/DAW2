@@ -7,6 +7,9 @@ const persona = {
     amigas: ['Annie', 'Becky']
 }
 
-const{ amigas } = persona;
-const[Annie] = amigas;
+const{ amigas: [Annie] } = persona;
 console.log(Annie);
+
+const{ lugar: {ciudad} } = persona;
+console.log(ciudad);
+
