@@ -1,18 +1,14 @@
-let equipos = new Array(4);
-equipos.fill(["", "", "", ""])
-/*equipos[0] = new Array(4);
-equipos[1] = new Array(4);
-equipos[2] = new Array(4);
-equipos[3] = new Array(4);
-equipos[0].fill("");
-equipos[1].fill("");
-equipos[2].fill("");
-equipos[3].fill("");*/
+//sacar el equipo con id = 1 usando arrow functions
+const FILAS = 4;
+const COLUMNAS = 4;
+let equipos = new Array(FILAS).fill().map(() => Array(COLUMNAS).fill("")); 
 const equipo = {
     id: 1,
     nombre: 'Portátil',
     personal: true
 };
-equipos[0][0] = "equipo";
+
+
+equipos[0][0] = equipo;
 console.table(equipos);
-equipos.forEach((fila) => console.log(fila.find((valor) => valor === "equipo")));
+console.log(equipos.flat().find((elemento) => elemento.id === 1).id);
