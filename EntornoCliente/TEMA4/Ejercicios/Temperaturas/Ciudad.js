@@ -1,6 +1,6 @@
 const MAX = 40;
 const MIN = -20;
-const DIAS = 30;
+export const DIAS = 30;
 export class Ciudad {
     #nombre;
     #temperaturas = new Array(DIAS);
