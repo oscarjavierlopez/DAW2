@@ -13,7 +13,7 @@ if(letras.has('e')){
     console.log("La letra e no está en el set");
 }
 
-for(letra of letras.values()){
+for(let letra of letras.values()){
     console.log(letra);
 }
 

@@ -18,6 +18,6 @@ function agruparNombre(nombre) {
 
 let nombresAgrupados = Map.groupBy(alumnos.values(), agruparNombre);
 console.log(nombresAgrupados);
-for ([clave, valor] of nombresAgrupados) {
+for (let [clave, valor] of nombresAgrupados) {
     console.log(clave + " => " + valor.length);
 }

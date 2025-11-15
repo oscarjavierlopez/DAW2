@@ -16,23 +16,23 @@ alumnos.delete(3);
 console.log(alumnos.has(3));
 
 console.log("Nombres:");
-for (nombre of alumnos.values()) {
+for (let nombre of alumnos.values()) {
     console.log(nombre);
 }
 
 
 console.log("ids:");
-for (id of alumnos.keys()) {
+for (let id of alumnos.keys()) {
     console.log(id);
 }
 
 console.log('Recorrido de alumnos con entries:');
-for ([clave, valor] of alumnos.entries()) {
+for (let [clave, valor] of alumnos.entries()) {
     console.log(clave + " = " + valor);
 }
 
 console.log('Recorrido de alumnos desde el mapa:')
-for ([clave, valor] of alumnos) { //tmb se pde poner for(let[clave, valor] of alumnos)
+for (let [clave, valor] of alumnos) { //tmb se pde poner for(let[clave, valor] of alumnos)
     console.log(clave + " = " + valor);
 }
 

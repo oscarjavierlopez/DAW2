@@ -3,7 +3,7 @@ let cadena2 = " desde javascript";
 
 console.log(" La longitud de la cadena 1 es: " + cadena1.length); //Devuelve la longitud de la cadena(contando espacios)
 
-cadenaMezcla = cadena1.concat(cadena2); //Concatena las 2 cadenas 
+let cadenaMezcla = cadena1.concat(cadena2); //Concatena las 2 cadenas 
 console.log("El resultado de la concatenación es: " + cadenaMezcla);
 
 console.log("El elemento en la posición 3 es: " + cadena1.charAt(3));//Devuelve el elemento en la posicion 3
@@ -21,7 +21,7 @@ console.log("La cadena1 en minúsculas es: " + cadena1.toLowerCase()); //Convier
 
 let palabras = cadena1.split(" "); //Devuelve un array(palabras) con las palabras de la cadena(usa como separador de palabra el espacio en blanco)
 console.log("Las palabras que contiene cadena1 son:")
-for (palabra of palabras) {
+for (let palabra of palabras) {
     console.log(palabra);
 }
 

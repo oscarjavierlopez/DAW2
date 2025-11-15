@@ -20,7 +20,7 @@ let pedidosAgrupados = Map.groupBy(pedidos, estado);
 
 function verCantidad(tipo) {
     let contador = 0;
-    for (pedido of pedidosAgrupados.get(tipo)) {
+    for (let pedido of pedidosAgrupados.get(tipo)) {
         contador++;
     }
     console.log("Hay " + contador + " pedidos " + tipo + "s");

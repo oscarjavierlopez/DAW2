@@ -17,14 +17,14 @@ let sumaEdadOscar = 0;
 let contadorOscar = 0;
 let sumaEdadLucia = 0;
 let contadorLucia = 0;
-for ([clave, valor] of personasPorNombre) {
+for (let [clave, valor] of personasPorNombre) {
     if (clave == "Óscar") {
-        for (persona of valor) {
+        for (let persona of valor) {
             sumaEdadOscar += persona.edad;
             contadorOscar++;
         }
     } else if (clave == "Lucía") {
-        for (persona of valor) {
+        for (let persona of valor) {
             sumaEdadLucia += persona.edad;
             contadorLucia++;
         }
