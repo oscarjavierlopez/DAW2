@@ -28,7 +28,7 @@ f3('Pepe', 50);
 //Parametros REST => se especifica con ... para decirle que no sé cuantos argumentos le voy a pasar
 function suma(...valores){ //los parametros rest se ponen los últimos en la lista de parámetros
     let resultado = 0;
-    for(numero of valores){ //valores es un array q contiene los argumentos q se le pasen
+    for(let numero of valores){ //valores es un array q contiene los argumentos q se le pasen
         resultado += numero;
     }
     return resultado;

@@ -15,8 +15,8 @@ console.log(dobles);
 
 //reduce => Simplifica el array a un valor único resultado de aplicar una funcion(de izquierda a derecha)
 let sumatorio = numeros.reduce((total, valor) => total + valor, 0); //0 es la inicializacion del acumulador 'total'
-console.log("El sumatorio de los 5 primeros numeros es: " + sumatorio); /*si no inicializo el acumulador a 0 coge como primer valor del acumulador 
-el primer elemento del array y empieza a iterar sobre el segundo elemento del array*/
+console.log("El sumatorio de los 5 primeros numeros es: " + sumatorio); /*si no inicializo el acumulador a 0 coge como primer valor del
+acumulador(previous value) el primer elemento del array y empieza a iterar sobre el segundo elemento del array*/
 
 
 
@@ -34,20 +34,12 @@ console.log("Los números pares son: " + pares);
 
 
 //every => Comprueba si todos los elementos del array pasan un test
-console.log("¿Todos los números son pares? " + numeros.every((number) => {
-    if(number % 2 === 0){
-        return true;
-    }
-}))
+console.log("¿Todos los números son pares? " + numeros.every((number) => number % 2 === 0))
 
 
 
 //some => Comprueba si alguno de los elementos del array pasan un test
-console.log("¿Hay algun número par? " + numeros.some((numero) => {
-    if(numero % 2 === 0){
-        return true;
-    }
-}));
+console.log("¿Hay algun número par? " + numeros.some((numero) => numero % 2 === 0));
 
 
 

@@ -1,6 +1,6 @@
 //setTimeOut() => Ejecuta una funcion despues de un tiempo
 setTimeout(() => console.log('Hola'), 1000); 
-//el primer argumento es el hanler(fn q se ejecuta)
+//el primer argumento es el handler(fn q se ejecuta)
 //el segundo argumento es el tiempo(ms) tras el cual se ejecutará el handler
 //devuelve un identificador numerico q representa el temporizador creado
 
