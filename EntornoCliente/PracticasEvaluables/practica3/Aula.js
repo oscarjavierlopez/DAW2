@@ -53,15 +53,10 @@ export class Aula {
     }
 
     getPorcentajeOcupacion() {
-        let contador = 0;
-        for (let i = 0; i < this.#equipos.length; i++) {
-            for (let j = 0; j < this.#equipos[i].length; j++) {
-                if (this.#equipos[i][j] !== null) {
-                    contador++;
-                }
-            }
-        }
-
+        let contador = this.#equipos
+            .flat()
+            .filter((valor) => valor !== null)
+            .length;
         return (contador * 100 / this.#puestos);
     }
 }

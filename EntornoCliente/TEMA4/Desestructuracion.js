@@ -34,14 +34,22 @@ const person = {
 }
 
 // Aquí el ':' renombra la propiedad 'nombre' a la variable 'n'
-const { nombre: n } = person;
+const { nombre: n } = person; //el nombre de variable q podemos usar es el q viene en azul oscuro
 console.log(n);
 
 //Aquí ':' redirige la desestructuracion a una variable llamada Annie
 const{ amigas: [Annie] } = person;
 console.log(Annie);
 
-const{ lugar: {ciudad} } = person;
+const{ lugar: {ciudad}, hermano = "Juan" } = person; //Se puede dar valores por defecto
 console.log(ciudad);
+console.log(hermano);
+
+
+//funcion con desestructuracion
+function ver({nombre, lugar: {ciudad}}){
+    console.log(nombre + " es de " + ciudad);
+}
+ver(person);
 
 

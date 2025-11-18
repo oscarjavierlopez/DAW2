@@ -54,5 +54,4 @@ function datosPortatiles() {
 
 datosPortatiles();
 
-
 console.log("%cEl número total de equipos en el departamento es: " + dptoNaranco.getNEquipos() + " equipos--------------------", 'background: #FADBD8');
