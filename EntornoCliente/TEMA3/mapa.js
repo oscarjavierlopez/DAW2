@@ -5,6 +5,8 @@ let alumnos = new Map([ //NO USAR COMO CLAVE PALABRAS SEPARADAS
 ]);
 
 alumnos.set(4, "Pedro");
+alumnos.set(4, 'Pepe')
+console.log(alumnos)
 
 console.log(alumnos.size);
 
