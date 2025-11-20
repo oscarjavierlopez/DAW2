@@ -1,12 +1,12 @@
 import { Festival } from "./Festival.js";
 import { Bailarin } from "./Bailarin.js";
 import { Pareja } from "./Pareja.js";
-function ordenarNiveles(pareja) {
-    if (pareja.nivel === "INICIACION") {
+function ordenarNiveles({nivel}) {
+    if (nivel === "INICIACION") {
         return "INICIACION";
-    } else if (pareja.nivel === "INTERMEDIO") {
+    } else if (nivel === "INTERMEDIO") {
         return "INTERMEDIO";
-    } else if (pareja.nivel === "AVANZADO") {
+    } else if (nivel === "AVANZADO") {
         return "AVANZADO";
     }
 }
@@ -17,8 +17,6 @@ let parejas = [];
 
 const SwingPisuerga = new Festival("Swing Pisuerga", 'Valladolid');
 festivales.set(SwingPisuerga.fecha, SwingPisuerga);
-
-
 
 //Nivel Iniciacion
 const Ana = new Bailarin('Ana', 'López');

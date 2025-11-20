@@ -3,7 +3,7 @@ let fechaActual = new Date();
 console.log("La fecha actual es: " + fechaActual);
 
 //Constructor con cadena(aaaa-mm-dd)
-let fechaNacimiento = new Date("1995-10-02"); 
+let fechaNacimiento = new Date("2004-12-16"); 
 console.log("Tu fecha de nacimiento es: " + fechaNacimiento);
 
 //constructor con milisegundos
@@ -28,6 +28,7 @@ console.log("El último día del siglo XIX fue: " + ultimoDiaSiglo);
 let añoNac = fechaNacimiento.getFullYear(); //devuelve el año de una fecha
 let diaNac = fechaNacimiento.getDate(); //devuelve el día d una fecha
 let mesNac = fechaNacimiento.getMonth(); //devuelve el mes de una fecha
+console.log('dia ' + fechaNacimiento.getDay())
 let horaNac = fechaNacimiento.getHours(); //devuelve las horas de una fecha
 let minNac = fechaNacimiento.getMinutes(); //devuelve los minutos de una fecha
 let secNac = fechaNacimiento.getSeconds(); //devuelve los segundos de una fecha
