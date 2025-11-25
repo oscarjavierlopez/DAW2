@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM y DOM</title>
+    <script>
+        let v = window.open('https://www.educa.jcyl.es/educacyl/cm/usuarios?locale=es_ES', 'educacyl', 'toolbar=no');
+        //abre una nueva ventana a la url indicada
+        setTimeout(
+            () => {
+                v.close(); //cierra la ventana anteriormente creada
+                window.location.href = "hola.html";
+                //cambia la direccion a la url especificada
+                let backButton = document.querySelector('button');
+                backButton.addEventListener('click', () => window.history.back())//navega a la URL anterior
+                window.status = "Pagina de prueba"; //Define el valor q aparece en la barra de estado
+                window.print(); //imprime el documento contenido en la ventana
+            }
+            , 1000);
+    </script>
+</head>
+
+<body>
+    <button>back</button>
+</body>
+
+</html>
