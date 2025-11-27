@@ -1,0 +1,62 @@
+<div class="form">
+  <h1>Formulario de usuario:</h1>
+  <form [formGroup]="formUser" (submit)="submit()">
+    <label for="nombre">Nombre:
+      <input type="text" id="nombre" formControlName="nombre">
+    </label>
+    <label for="email">Email:
+      <input type="text" id="email" formControlName="email">
+    </label>
+    <label for="biografia">Biografía:
+      <textarea formControlName="biografia"></textarea>
+    </label>
+    <p>Género:</p>
+    <label for="masculino">
+      <input type="radio" formControlName="genero" id="masculino" value="masculino">masculino
+    </label>
+    <label for="femenino">
+      <input type="radio" formControlName="genero" id="femenino" value="femenino">femenino
+    </label>
+    <label for="otro">
+      <input type="radio" formControlName="genero" id="otro" value="otro">otro
+    </label>
+    <div formGroupName="preferencias">
+      <div>Intereses:
+        <p>
+          <input type="checkbox" formControlName="musica">musica
+        </p>
+        <p>
+          <input type="checkbox" formControlName="deportes">deportes
+        </p>
+        <p>
+          <input type="checkbox" formControlName="videojuegos">videojuegos
+        </p>
+        <p>
+          <input type="checkbox" formControlName="lectura">lectura
+        </p>
+      </div>
+      <div>Nivel:
+        <select formControlName="nivelExperiencia">
+          <option>basico</option>
+          <option>intermedio</option>
+          <option>avanzado</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit">Confirmar</button>
+  </form>
+</div>
+
+@if (datos) {
+<p><strong>Datos: </strong> {{datos}}</p>
+}
+
+@if (usuariosRegistrados.length > 0) {
+<h2>Usuarios registrados:</h2>
+<ul>
+  @for (usuario of usuariosRegistrados; track $index) {
+  <li>{{usuario}}</li>
+  }
+</ul>
+}
+<router-outlet />
