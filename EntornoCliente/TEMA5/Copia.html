@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>copia</title>
+</head>
+
+<body>
+    <div id="id0" style="border:solid 1px black">Esto es un contenedor</div>
+    <script>
+        const d = document.querySelector('#id0');
+        const copiaProfunda = d.cloneNode(true); //copia todas las props del nodo y sus hijos
+        d.after(copiaProfunda);
+        const copiaSuperficial = d.cloneNode(false); //copia solo las props de primer nivel del nodo(id, className, tagName...)
+        d.after(copiaSuperficial);
+        const p = document.createElement('p');
+        p.innerText = 'Algo'
+        d.append(p);
+        //d.remove(); //borra el objeto y sus hijos
+        console.log(copiaProfunda.outerHTML);
+        console.log(copiaSuperficial.outerHTML);
+    </script>
+</body>
+
+</html>

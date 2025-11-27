@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create and append element</title>
+</head>
+<body>
+    <div id="id0" style="border:solid 1px black">Esto es un contenedor</div>
+    <script>
+        const donde = document.getElementById('id0');
+        const e1 = document.createElement('div');
+        e1.innerHTML = '<strong>Prueba1</strong>';
+        donde.append(e1); //hasta que no haga el append no entra en el DOM
+        const e2 = document.createElement('div');
+        e2.innerHTML = '<strong>Prueba2</strong>';
+        donde.prepend(e2); 
+    </script>
+</body>
+</html>
