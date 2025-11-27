@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej 1</title>
+</head>
+
+<body>
+    <div id="id0">
+        <a href="http://uno.com">uno</a>
+        <div id="id1">
+            Esto es un bloque
+            <a href="http://dos.com">dos</a>
+            <input name="prueba1">
+            <input name="prueba2">
+        </div>
+    </div>
+</body>
+<script>
+    function verNodos({ childNodes }) {
+        childNodes.forEach((child) => {
+            if (child.nodeType === 3) {
+                if (child.nodeValue.trim() !== '') {
+                    console.log('Texto: ' + child.textContent)
+                }
+            } else if (child.nodeType === 1 && child.childNodes.length > 0) {
+                console.log(child);
+                verNodos(child);
+            } else {
+                console.log(child);
+            }
+        })
+    }
+
+    function verNodosIt({ childNodes }) {
+        for (const child of childNodes) {
+            if (child.nodeType === 3) {
+                console.log('Texto: ' + child.textContent)
+            } else if (child.nodeType === 1 && child.childNodes.length > 0) {
+                console.log(child);
+                verNodos(child);
+            } else {
+                console.log(child);
+            }
+        }
+    }
+
+    let divs = document.querySelectorAll('div');
+    divs.forEach((div) => console.log(`ID: ${div.id} - TEXTO: ${div.innerText}`));
+
+    let links = document.querySelectorAll('a');
+    links.forEach((link, index) => console.log(link.href))
+
+    verNodos(document.querySelector('#id1'));
+</script>
+
+</html>
