@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej 4</title>
+</head>
+
+<body>
+    <h1>dom_04 - Ejercicio: Obtener la etiqueta que aparece más veces</h1>
+    <hr id="linea1" />
+    <p id="parrafo1">Primer párrafo</p>
+    <p id="parrafo2">Segundo párrafo</p>
+    <p id="parrafo3">Tercer párrafo</p>
+    <p id="parrafo4">Cuarto párrafo</p>
+    <p id="parrafo5">Quinto párrafo</p>
+    <p id="parrafo6">Sexto párrafo</p>
+    <p id="parrafo7">Séptimo párrafo</p>
+    <p id="parrafo8">Octavo párrafo</p>
+    <p id="parrafo9">Noveno párrafo</p>
+    <p id="parrafo10">Décimo párrafo</p>
+    <hr id="linea2" />
+    <button onclick="mostrarInformacion();" id="boton1">Mostrar información</button>
+    <script>
+        let nodes = document.querySelectorAll('*');
+
+        function mostrarInformacion() {
+            let TagMap = new Map([]);
+            let max = 0;
+            let maxTag = "";
+            nodes.forEach((nodo, index) => {
+                if (nodo.nodeType === 1) {
+                    if (TagMap.has(nodo.nodeName)) {
+                        let count = TagMap.get(nodo.nodeName) + 1;
+                        if (count > max) {
+                            max = count;
+                            maxTag = nodo.nodeName;
+                        }
+                        TagMap.set(nodo.nodeName, count);
+                    } else {
+                        TagMap.set(nodo.nodeName, 1);
+                    }
+                }
+
+            })
+            alert(`El elemento que aparece más veces es: ${maxTag}  (${max} veces)`);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej 3</title>
+</head>
+
+<body>
+    <div id="principal" style="border:solid 1px black;
+    height:300px; width:700px; margin: 0 auto; background:orange;">
+    </div>
+    <script>
+        const principal = document.querySelector('#principal');
+
+        const mensajesPublicitarios = [
+            "Descubre la energía que impulsa tu día",
+            "Tu estilo, tu marca, tu momento",
+            "Innovación que transforma tu mundo",
+            "Calidad que se siente en cada detalle",
+            "Conéctate con lo que realmente importa",
+            "Haz de lo cotidiano algo extraordinario"
+        ];
+
+        const repetir = () => {
+            principal.innerHTML = "";
+            mensajesPublicitarios.forEach((mensaje) => {
+                let colores = ["red",
+                    "green",
+                    "blue",
+                    "white",
+                    "gray",
+                    "silver",
+                    "maroon",
+                    "olive",
+                    "lime",
+                    "teal",
+                    "navy",
+                    "fuchsia",
+                    "purple",
+                    "orange",
+                    "yellow",
+                    "aqua",
+                    "skyblue",
+                    "tomato",
+                    "gold",
+                    "indigo",
+                    "violet",
+                    "brown",
+                    "beige",
+                    "coral"]
+                let div = document.createElement('div');
+                div.textContent = mensaje;
+                div.style.width = '100px';
+                div.style.backgroundColor = colores[Math.floor(Math.random() * colores.length)];
+                div.style.border = '1px solid black';
+                div.style.position = 'relative';
+                div.style.left = Math.floor(Math.random() * (700 - 100)) + "px";
+                principal.append(div);
+            }
+            )
+        }
+
+        setInterval(repetir, 1000);
+    </script>
+</body>
+
+</html>
