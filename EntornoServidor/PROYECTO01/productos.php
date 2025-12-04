@@ -46,9 +46,21 @@ function consultarProductos($codCategoria)
                 echo '<td>' . $row['nombre'] . '</td>';
                 echo '<td>' . $row['descripcion'] . '</td>';
                 echo '<td>' . $row['precio'] . '</td>';
-                echo '<td>' . $row['stock'];
-                if ($row['stock'] < 5) {
-                    echo ' ¡SOLO QUEDAN ' . $row['stock'] . '!</td>';
+                if (isset($_SESSION['productos']) && in_array($row["codProducto"], $_SESSION['productos'])) {
+                    for ($i = 0; $i < count($_SESSION['productos']); $i++) {
+                        if ($row["codProducto"] === $_SESSION['productos'][$i]) {
+                            $unidades = $row['stock'] - $_SESSION['uds'][$i];
+                            echo '<td>' . $unidades;
+                            if ($unidades < 5) {
+                                echo ' ¡SOLO QUEDAN ' . $unidades . '!</td>';
+                            }
+                        }
+                    }
+                } else {
+                    echo '<td>' . $row['stock'];
+                    if ($row['stock'] < 5) {
+                        echo ' ¡SOLO QUEDAN ' . $row['stock'] . '!</td>';
+                    }
                 }
                 echo '<td><input type="number" min="0" max="' . $row['stock'] . '" id="' . $row["codProducto"] . '"></td>';
                 echo '<td><button type="button" id="' . $row["codProducto"] . '">comprar</button></td>';

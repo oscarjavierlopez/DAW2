@@ -1,0 +1,102 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-color: rgb(198, 198, 205);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 5px;
+    height: 100%;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+aside {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+aside div {
+    border: 2px solid black;
+    padding: 5px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+tr {
+    height: 100%;
+}
+
+td {
+    width: 100%;
+    text-align: center;
+}
+
+table,
+td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+td {
+
+    align-content: center;
+    justify-content: center;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(97, 93, 93);
+}
+
+.agua {
+    background-color: blue;
+}
+
+.barco {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+a[href="cerrarSesion.php"] {
+    text-decoration: none;
+    color: black;
+    border: 2px solid black;
+    background-color: rgb(194, 173, 173);
+    padding: 5px;
+}
+
+p span {
+    text-decoration: underline;
+}
+
+.rojo {
+    color: red;
+    font-weight: bold;
+}
+
+.verde{
+    color: rgb(69, 107, 13);
+    font-weight: bold;
+}

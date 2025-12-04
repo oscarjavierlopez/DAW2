@@ -1,4 +1,12 @@
 <?php
+require __DIR__ ."/vendor/autoload.php";
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+$log = new Logger('MiLogger');
+$log->pushHandler(new StreamHandler('logs/proyecto01.log', Logger::DEBUG));
+
+
 ob_start();
 if (!isset($_COOKIE['remember'])) {
     setcookie("remember", "");
@@ -24,6 +32,7 @@ if (!isset($_SESSION['inicio'])) {
 
 function validarUsuario($email, $clave)
 {
+    global $log;
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -42,10 +51,13 @@ function validarUsuario($email, $clave)
                     $_SESSION['email'] = $email;
                     $_SESSION['codRestaurante'] = $row['codRestaurante']; //almacenamos en la sesion el codRestaurante para cuando se desee ver el carrito
                     $_SESSION["inicio"] = time(); //hacemos que el inicio comience a contar a partir de ahora
+                    /*Almacenamos el email de usuario en una cookie remember */
                     setcookie('remember', bin2hex($email), time() + 600, "/", "", true, true); //bin2hex() genera token oculto
+                    $log->info($_SESSION['email'] . " Inició sesión");
                     header("Location: categorias.php");
                     exit;
                 } else {
+                    $log->warning($email . "  insertó una contraseña incorrecta");
                     echo '<p>Contraseña no válida</p>';
                 }
             } else {
@@ -82,10 +94,19 @@ function validarUsuario($email, $clave)
 
         <form action="" method="post">
             <h2>Login</h2>
-            <div class="email">
+            <?php
+            if (!isset($_COOKIE['remember'])) {
+                echo '<div class="email">
                 <label for="email">Email:</label><br>
                 <input type="text" id="email" name="email" required>
-            </div>
+            </div>';
+            } else {
+                echo '<div class="email">
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email" required value="' . hex2bin($_COOKIE['remember']) . '">
+            </div>';
+            }
+            ?>
 
             <div class="clave">
                 <label for="clave">Clave:</label><br>

@@ -25,5 +25,9 @@ async function añadirCarrito(codProducto, unidades) {
 }
 
 for (let boton of botones) {
-    boton.addEventListener('click', () => añadirCarrito(boton.id, Array.from(inputs).find((input) => input.id == boton.id).value))
+    boton.addEventListener('click', () => {
+        añadirCarrito(boton.id, Array.from(inputs)
+            .find((input) => input.id == boton.id)
+            .value);
+    })
 }
