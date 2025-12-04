@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>dom_35 - Ejercicio: Hacer clic sobre un párrafo y clonarlo para insertarlo alternativamente al principio y al
+        final de los párrafos</title>
+</head>
+
+<body>
+    <h1>dom_35 - Ejercicio: Hacer clic sobre un párrafo y clonarlo para insertarlo alternativamente al principio y al
+        final de los párrafos</h1>
+    <hr />
+    <p id="parrafo1" onclick="clonar(this);">Primer párrafo</p>
+    <p id="parrafo2" onclick="clonar(this);">Segundo párrafo</p>
+    <p id="parrafo3" onclick="clonar(this);">Tercer párrafo</p>
+</body>
+<script>
+    let contador = 0;
+    function clonar(p) {
+        contador++;
+        const firstP = document.querySelector('p:first-of-type');
+        const lastP = document.querySelector('p:last-of-type');
+        const pClon = p.cloneNode(true);
+        if (contador % 2 !== 0) {
+            firstP.before(pClon);
+        } else {
+            lastP.after(pClon);
+        }
+    }
+</script>
+
+</html>

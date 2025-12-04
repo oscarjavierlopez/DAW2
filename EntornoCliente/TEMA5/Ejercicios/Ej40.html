@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>dom_40 - Ejercicio: Hacer que una serie de párrafos se muestren de uno en uno un número determinado de
+        segundos</title>
+</head>
+
+<body onload="ponerParrafoInicial()">
+    <h1>dom_40 - Ejercicio: Hacer que una serie de párrafos se muestren de uno en uno un número determinado de segundos
+    </h1>
+    <hr />
+    <p id="parrafo"></p>
+
+
+    <div style="visibility:hidden">
+        <span>Primer párrafo</span>
+        <span>Segundo párrafo</span>
+        <span>Tercer párrafo</span>
+        <span>Cuarto párrafo</span>
+        <span>Quinto párrafo</span>
+    </div>
+    <br />
+
+    <script>
+        let spans = document.querySelector('div').querySelectorAll('span');
+        function ponerParrafoInicial() {
+            spans.forEach((span, i) => {
+                setTimeout(() => {
+                    span.style.visibility = "visible";
+
+                    setTimeout(() => span.style.visibility = "hidden", 1000)
+                }, i * 2000);
+            })
+        }
+    </script>
+</body>
+
+</html>

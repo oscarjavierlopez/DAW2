@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>dom_39 - Ejercicio: Mostrar un párrafo y dos botones para aumentar y disminuir el tamaño de la fuente</title>
+</head>
+
+<body>
+    <h1>dom_39 - Ejercicio: Mostrar un párrafo y dos botones para aumentar y disminuir el tamaño de la fuente</h1>
+    <hr />
+    <button onclick="aumentar();">Aumentar</button>
+    <button onclick="disminuir();">Disminuir</button>
+    <hr />
+    <p id="parrafo" style="font-size:14px">Esto es un texto de prueba cuya fuente va a cambiar de tamaño.</p>
+
+    <script>
+        const p = document.querySelector('p');
+        
+        function aumentar(){ 
+            p.style.fontSize = `${parseInt(p.style.fontSize.substring(0, 2)) + 10}px`;
+        }
+
+        function disminuir(){
+            p.style.fontSize = `${parseInt(p.style.fontSize.substring(0, 2)) - 10}px`;
+        }
+    </script>
+</html>

@@ -14,3 +14,5 @@ div.classList.remove("foo", "bar");
 
 // reemplazar la clase "foo" por "bar"
 div.classList.replace("foo", "bar");
+
+console.dir(div) //te muestra el nodo como un objeto js
