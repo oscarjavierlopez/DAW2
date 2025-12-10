@@ -5,11 +5,11 @@ function handleMove(e){
     img.style.top = e.clientY + 'px';
     img.style.left =  e.clientX + 'px';
 }
-function handleClick(){
-    let span = document.createElement('span');
+function handleClick(e){
+    const span = document.createElement('span');
     span.style.position = 'absolute';
-    span.style.top = img.style.top;
-    span.style.left = img.style.left;
+    span.style.top = e.clientY + 'px';
+    span.style.left = e.clientX + 'px';
     span.innerText = '*';
     document.body.append(span);
 }
