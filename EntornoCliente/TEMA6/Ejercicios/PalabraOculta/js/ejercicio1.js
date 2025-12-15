@@ -1,6 +1,12 @@
 const letterInput = document.getElementById('letras');
 letterInput.disabled = 'true';
 const enteredWord = document.getElementById('palabra');
+const newWordButton = document.getElementById('nueva');
+const solutionButton = document.getElementById('solucion');
+const endButton = document.getElementById('finalizar');
+const result = document.getElementById('resultado');
+let totalPartidas = 0;
+let aciertos = 0;
 
 function disorderWord() {
     const lettersOfCorrectWord = [];
@@ -25,37 +31,67 @@ function disorderWord() {
     }
 }
 
-function enteredWordChange(e) {
-    const result = document.getElementById('resultado');
-    result.classList.remove('error');
-    result.classList.remove('intentos');
+function enteredWordInput(e) {
+    e.target.value = e.target.value.toUpperCase();
     result.innerText = '';
-    if (e.target.value !== correctWord) {
-        if (e.target.value !== correctWord) {
-            result.classList.add('error');
-            result.innerText = 'PALABRA INCORRECTA';
-        }
-    } else {
+    if (e.target.value === correctWord) {
+        result.style.display = 'block';
+        result.classList.remove('info');
         result.classList.add('intentos');
-        result.innerText = 'PALABRA CORRECTA';
+        result.innerText = 'Has acertado la palabra ' + correctWord;
+        newWordButton.disabled = false;
+        solutionButton.disabled = true;
+        aciertos++;
+        totalPartidas++;
     }
 }
 
+function generateNewWord() {
+    correctWord = palabras[Math.floor(Math.random() * palabras.length)];
+    letterInput.value = '';
+    disorderWord();
+    solutionButton.disabled = false;
+    newWordButton.disabled = true;
+    enteredWord.value = '';
+    result.style.display = 'none';
+}
 
+function viewSolution() {
+    result.style.display = 'block';
+    result.classList.remove('error');
+    result.classList.remove('intentos');
+    result.classList.add('info');
+    result.innerText = 'La palabra correcta es ' + correctWord;
+    newWordButton.disabled = false;
+    solutionButton.disabled = true;
+    totalPartidas++;
+}
+
+function endGame(){
+    result.style.display = 'block';
+    result.classList.remove('info');
+    result.classList.remove('intentos');
+    result.classList.add('error');
+    result.innerText = `Porcentaje de aciertos: ${aciertos * 100 / totalPartidas}%`;
+    endButton.disabled = true;
+    solutionButton.disabled = true;
+    newWordButton.disabled = true;
+}
 const palabras = [
-    "montaña",
-    "río",
-    "codigo",
-    "teclado",
-    "nube",
-    "ventana",
-    "bosque",
-    "pantalla",
-    "sol",
-    "camino"
+    "PROGRAMACION",
+    "SERVIDOR",
+    "BASE",
+    "DATOS",
+    "JAVASCRIPT",
+    "REACT",
+    "PYTHON",
+    "FRAMEWORK",
+    "APLICACION",
+    "DESARROLLO"
 ];
-export const correctWord = palabras[Math.floor(Math.random() * palabras.length)];
-disorderWord();
-enteredWord.addEventListener('change', enteredWordChange);
-
-
+let correctWord = '';
+generateNewWord();
+enteredWord.addEventListener('input', enteredWordInput);
+newWordButton.addEventListener('click', generateNewWord);
+solutionButton.addEventListener('click', viewSolution);
+endButton.addEventListener('click', endGame);
