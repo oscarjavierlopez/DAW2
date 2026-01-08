@@ -20,3 +20,26 @@ caja1.addEventListener('dragover', function(e) { //Se produce cuando el elemento
 caja2.addEventListener('dragover', function(e) {
     e.preventDefault();
 });
+
+caja1.addEventListener('dragstart', () => {
+    console.log('dragstart'); //Se dispara cuando comienzas a arrastrar
+})
+
+caja1.addEventListener('drag', () => {
+    console.log('drag');//se dispara repetidamente mientras el usuario sigue arrastrando el elemento
+})
+caja1.addEventListener('dragend', () => {
+    console.log('dragend');//se dispara cuando sueltas
+})
+
+caja2.addEventListener('dragenter', () => {
+    console.log('dragenter');//se dispara cuando el elemento arrastrable entra en el área de soltado
+})
+
+caja2.addEventListener('dragover', () => {
+    console.log('dragover'); //Se dispara continuamente mientras el elemento arrastrado se mantiene sobre esa área.
+});
+
+caja2.addEventListener('dragleave', () => {
+    console.log('dragleave');//se dispara cuando el elemento arrastrado sale del área de soltado
+})
