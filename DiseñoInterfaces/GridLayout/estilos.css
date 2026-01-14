@@ -1,0 +1,55 @@
+body {
+    display: grid;
+    grid-template-rows: 100px 1fr 80px;
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-areas:
+        "header header header"
+        "izdo main dcho"
+        "footer footer dcho";
+    width: 100vw;
+    height: 100vh;
+    font-size: 30px;
+}
+
+header {
+    background-color: blue;
+    color: white;
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#izdo {
+    background-color: rgb(96, 96, 158);
+    grid-area: izdo;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+main {
+    font-size: 20px;
+    grid-area: main;
+    padding: 10px;
+}
+
+#dcho {
+    background-color: rgb(96, 96, 158);
+    grid-area: dcho;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+footer {
+    background-color: rgb(175, 175, 200);
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
