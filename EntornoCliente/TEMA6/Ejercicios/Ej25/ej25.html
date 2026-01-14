@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>eventos_25 - Arrastrar y soltar: Mover el texto y la imagen bidirecconal</title>
+        <style>
+            .c1 {
+                border: 5px solid red;
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: 5cm;
+                left: 8cm;
+            }
+
+
+            .c2 {
+                border: 5px solid blue;
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: 5cm;
+                left: 12cm;
+            }
+        </style>
+        <script type="module" src="ej25.js"></script>
+    </head>
+    <body>
+        <h1>eventos_25 - Arrastrar y soltar: Mover el texto y la imagen bidirecconal</h1>
+        <hr />
+
+
+        <div class="c1" id="origen">
+            <span draggable="true" id="texto">EL TEXTO</span>
+            <img draggable="true" src="./recursos/ball.gif" id="pelota"/> 
+        </div>
+
+
+        <div class="c2" id="destino"></div>
+
+
+        <script type="text/javascript">

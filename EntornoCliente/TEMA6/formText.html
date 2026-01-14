@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="cliente" action="#">
+        <label>Nombre: <input type="text" name="nombre" value="Pedro"></label>
+        <label>Teléfono: <input type="text" name="telefono" value="687232332"></label>
+        <label>Datos: <textarea name="datos" cols="30" rows="10">Lorem Ipsum</textarea></label>
+        <input type="submit" value="Enviar">
+    </form>
+    <script>
+        const fo = document.getElementById('cliente'); //form es palabra reservada en js
+        fo.addEventListener('submit', (e) => {
+            e.preventDefault();
+            console.log(fo['nombre'].value);
+            console.log(fo[0].value);
+            console.log(fo.elements['telefono'].value);
+            console.log(fo.elements[1].value);
+            let res = "";
+            for (let campo of fo) {
+                res += campo.value + " ";
+            }
+            console.log(res);
+        });
+    </script>
+</body>
+
+</html>
