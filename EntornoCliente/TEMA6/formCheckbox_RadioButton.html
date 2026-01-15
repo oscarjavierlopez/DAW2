@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        label {
+            display: block;
+        }
+
+        input[type="submit"]{
+            margin-top: 5px;
+            padding: 2px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="cliente" action="#">
+        <label><input type="radio" name="pregunta" value="si" checked>Afirmativo</label>
+        <label><input type="radio" name="pregunta" value="no">Negativo</label>
+        <br>
+        <label><input type="checkbox" name="color" value="azul" checked>Azul</label>
+        <label><input type="checkbox" name="color" value="verde">Verde</label>
+        <label><input type="checkbox" name="color" value="rojo">Rojo</label>
+        <br>
+        <label><input type="checkbox" name="cookies" value="acepto" checked>Estoy conforme con las cookies</label>
+        <input type="submit" name="enviar" value="Enviar">
+    </form>
+    <script>
+        const fo = document.getElementById('cliente');
+        fo.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let radio = fo['pregunta'];
+            console.log(radio.value);
+            console.log(`${radio[0].value} -> ${radio[0].checked}`);
+            console.log(`${radio[1].value} -> ${radio[1].checked}`);
+
+            let checkboxMultiple = fo['color'];
+            for (let opcion of checkboxMultiple) {
+                console.log(`${opcion.value} -> ${opcion.checked}`);
+            }
+
+            let checkboxUnico = fo['cookies'];
+            console.log(`${checkboxUnico.value} -> ${checkboxUnico.checked}`);
+        });
+    </script>
+</body>
+
+</html>

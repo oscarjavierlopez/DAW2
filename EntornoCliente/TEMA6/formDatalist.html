@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        label {
+            display: block;
+        }
+
+        input[type="submit"] {
+            margin-top: 5px;
+            padding: 2px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="cliente" action="#">
+        <label for="ice-cream-choice">Choose a flavor:</label>
+        <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+        <datalist id="ice-cream-flavors">
+            <option value="Chocolate"></option>
+            <option value="Coconut"></option>
+            <option value="Mint"></option>
+            <option value="Strawberry"></option>
+            <option value="Vanilla"></option>
+        </datalist>
+        <input type="submit" name="enviar" value="Enviar">
+    </form>
+    <script>
+        const fo = document.getElementById('cliente'); //form es palabra reservada en js
+        fo.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let flavors = fo['ice-cream-choice'];
+            console.log(`Helado favorito: ${flavors.value}`);
+        });
+    </script>
+</body>
+
+</html>
