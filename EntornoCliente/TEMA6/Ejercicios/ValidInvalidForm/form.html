@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--Solo es HTML y CSS-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input:valid {
+            background-color: lightskyblue;
+        }
+
+        input:invalid {
+            background-color: orange;
+        }
+
+        input:required {
+            background-color: palegreen;
+        }
+
+        input[type="submit"]{
+            background-color: rgb(198, 191, 191);
+            padding: 2px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <label for="user1">Usuario: <input type="text" name="user1" id="user1" required></label>
+        <label for="user2">Usuario: <input type="text" name="user2" id="user2" minlength="3"></label>
+        <label for="user3">Usuario: <input type="text" name="user3" id="user3"></label>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>

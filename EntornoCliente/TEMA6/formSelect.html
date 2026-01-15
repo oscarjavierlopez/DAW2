@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        label {
+            display: block;
+        }
+
+        input[type="submit"] {
+            margin-top: 5px;
+            padding: 2px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="cliente" action="#">
+        <select name="colores">
+            <option value="" selected>-Selecionar un color-</option>
+            <option value="rojo">Rojo</option>
+            <option value="verde">verde</option>
+        </select>
+        <input type="submit" name="enviar" value="Enviar">
+    </form>
+    <script>
+        const fo = document.getElementById('cliente'); //form es palabra reservada en js
+        fo.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let lista = fo['colores'];
+            console.log('indice seleccionado: ' + lista.selectedIndex);
+            console.log(`${lista[0].value} -> ${lista[0].selected}`);
+            console.log(`${lista[1].value} -> ${lista[1].selected}`);
+            console.log(`${lista[2].value} -> ${lista[2].selected}`);
+        });
+    </script>
+</body>
+
+</html>
