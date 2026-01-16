@@ -1,0 +1,14 @@
+@if (producto !== undefined) {
+<div class="product-card">
+    <div class="product-image"> <img src={{producto.imagen}} alt={{producto.nombre}}> <span
+            class="product-category">Categoría: {{producto.categoria}}</span> </div>
+    <div class="product-info">
+        <h1 class="product-name">{{producto.id}}. {{producto.nombre.toUpperCase()}}</h1>
+        <p class="product-price">{{producto.precio}} €</p>
+        <p class="product-description"> {{producto.descripcion}} </p>
+        <button class="product-button">Añadir al carrito</button>
+    </div>
+</div>
+}@else {
+<h2>PRODUCTO NO ENCONTRADO</h2>
+}

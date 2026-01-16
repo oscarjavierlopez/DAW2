@@ -1,0 +1,23 @@
+<div class="container">
+    <aside>
+        <a routerLink="electronica">Electrónica</a>
+        <a routerLink="ropa">Ropa</a>
+        <a routerLink="alimentos">Alimentos</a>
+    </aside>
+    <main class="productos">
+        @for (producto of productos; track producto.id) {
+        <article class="product-card">
+            <h2>{{producto.nombre}}</h2>
+            <div class="product-image-wrapper">
+                <img src={{producto.imagen}} alt={{producto.nombre}} />
+            </div>
+            <div class="product-link">
+                <a routerLink="/productos/{{producto.id}}" class="product-button">Ver producto</a>
+            </div>
+        </article>
+        }
+    </main>
+    <div class="router-outlet">
+        <router-outlet></router-outlet>
+    </div>
+</div>
