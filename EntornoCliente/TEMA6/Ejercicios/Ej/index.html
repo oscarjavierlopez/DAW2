@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select con opciones</title>
+    <style>
+        button{
+            margin-right: 5px;
+        }
+    </style>
+    <script type="module" src="main.js"></script>
+</head>
+
+<body>
+    <form action="#">
+        <select name="nacionalidad" id="nacionalidad">
+            <option value="Española">Española</option>
+            <option value="Inglesa">Inglesa</option>
+            <option value="Italiana">Italiana</option>
+            <option value="Alemana">Alemana</option>
+            <option value="Portuguesa">Portuguesa</option>
+        </select>
+        <label for="nacionalidad">Nacionalidad</label>
+        <br>
+        <br>
+
+        <button id="consultar-numero">Consultar numero</button>
+        <button id="insertar-francesa">Insertar nacionalidad francesa con indice 4</button>
+        <button id="eliminar-id2">Eliminar nacionalidad con id=2</button>
+        <button id="consultar-id2">Obtener la nacionalidad con id=2</button>
+    </form>
+</body>
+
+</html>

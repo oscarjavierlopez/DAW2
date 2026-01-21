@@ -1,0 +1,109 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Epilogue, sans-serif;
+}
+
+article {
+    width: 70%;
+    border-radius: 10px;
+    box-shadow: 2px 5px 9px 0px rgba(0, 0, 0, 0.36);
+    display: flex;
+    flex-direction: column;
+}
+
+.superior {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+        "avatar nombre"
+        "avatar descripcion"
+        "avatar ubicacion"
+        "avatar redes";
+    gap: 0.5rem;
+}
+
+.superior>.avatar {
+    grid-area: avatar;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.superior>.avatar>img {
+    border-radius: 50%;
+    border: 5px double rgba(206, 209, 213, 0.5);
+}
+
+.superior>h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 800;
+    grid-area: nombre;
+    margin: 0;
+}
+
+.superior>.descripcion {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    color: rgb(124, 167, 179);
+    margin: 0;
+    grid-area: descripcion;
+}
+
+.superior>.ubicacion {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgb(124, 167, 179);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    grid-area: ubicacion;
+}
+
+.superior>.social-networks>ul {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    grid-area: redes;
+}
+
+.superior li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.superior li:hover {
+    background-color: rgba(247, 249, 250, 0.925);
+}
+
+.superior a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.inferior {
+    padding: 20px;
+    background-color: rgb(249 250 251 / 0.5);
+}
+
+.inferior>h3{
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2.8px;
+    line-height: 20px;
+}
