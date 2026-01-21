@@ -4,21 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 6</title>
-    <script type="module" src="ej6.js"></script>
-    <style>
-        label{
-            margin-left: 10px;
-        }
-
-        input[type="submit"]{
-            margin-left: 10px;
-        }
-    </style>
+    <title>Insertar un país nuevo o eliminar el último o el seleccionado</title>
+    <script type="module" src="main.js"></script>
 </head>
 
 <body>
-    <form action="#"></form>
+    <h1>Insertar un país nuevo o eliminar el último o el seleccionado</h1>
+    <hr>
+
+    <form action="#" id="form-nacionalidades">
+        <label for="nacionalidad">Nacionalidad</label><br>
+        <select name="nacionalidad" id="nacionalidad">
+            
+        </select>
+
+        <br>
+        <br>
+
+        <input type="text" name="nueva" id="nueva">
+        <br>
+        <input type="submit" value="Insertar nacionalidad">
+    </form>
+
+    <hr>
+
+    <form action="#" id="form-eliminar">
+        <button id="eliminar">Eliminar</button> <br>
+        <input type="radio" name="nacionalidadEliminar" value="ultima" id="ultima">
+        <label for="ultima">Última:</label><br>
+        <input type="radio" name="nacionalidadEliminar" value="seleccionada" id="selecconada">
+        <label for="seleccionada">Seleccionada:</label>
+    </form>
 </body>
 
 </html>

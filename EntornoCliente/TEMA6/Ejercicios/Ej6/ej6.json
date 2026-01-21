@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "valor": "española"
+    },
+    {
+        "id": 2,
+        "valor": "china"
+    },
+    {
+        "id": 3,
+        "valor": "mongola"
+    },
+    {
+        "id": 4,
+        "valor": "rusa"
+    },
+    {
+        "id": 5,
+        "valor": "francesa"
+    }
+]
