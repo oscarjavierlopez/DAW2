@@ -36,6 +36,7 @@ function analizarTexto(texto) {
         }
     } else {
         console.log("No hay ninguna URL en el texto")
+        
     }
 
 }
