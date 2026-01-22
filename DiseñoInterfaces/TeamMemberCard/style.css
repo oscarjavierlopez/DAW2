@@ -1,4 +1,7 @@
 body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,10 +14,15 @@ article {
     box-shadow: 2px 5px 9px 0px rgba(0, 0, 0, 0.36);
     display: flex;
     flex-direction: column;
+    transition: box-shadow 0.3s ease;
+}
+
+article:hover{
+    box-shadow: 4px 12px 24px 0px rgba(0, 0, 0, 0.45);
 }
 
 .superior {
-    padding: 20px;
+    padding: 30px;
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: repeat(4, auto);
@@ -97,13 +105,121 @@ article {
 }
 
 .inferior {
-    padding: 20px;
+    padding: 50px 30px;
     background-color: rgb(249 250 251 / 0.5);
 }
 
-.inferior>h3{
+.inferior>h3 {
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2.8px;
     line-height: 20px;
+}
+
+.inferior>.habilidades {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 40px;
+}
+
+.habilidad {
+    display: flex;
+    justify-content: space-between;
+}
+
+.habilidad>p:first-child {
+    line-height: 20px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.habilidad>p:nth-child(2) {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgb(59, 107, 120);
+}
+
+.progressBarBarContainer {
+    background-color: rgb(229, 231, 235);
+    height: 6px;
+    border-radius: 12px;
+}
+
+.UI-UX .progressBar {
+    background-color: rgb(59, 107, 120);
+    height: 100%;
+    border-radius: 12px;
+    width: 90%;
+}
+
+.Frontend-Development .progressBar {
+    background-color: rgb(59, 107, 120);
+    height: 100%;
+    border-radius: 12px;
+    width: 75%;
+}
+
+.Product-Strategy .progressBar {
+    background-color: rgb(59, 107, 120);
+    height: 100%;
+    border-radius: 12px;
+    width: 85%;
+}
+
+.Brand-Identity .progressBar {
+    background-color: rgb(59, 107, 120);
+    height: 100%;
+    border-radius: 12px;
+    width: 80%;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: rgb(59, 107, 120);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    margin-top: 50px;
+    padding: 15px 40px;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+button:hover {
+    background-color: rgb(50, 85, 95);
+}
+
+@media (max-width: 800px) {
+    .superior {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas:
+            "avatar"
+            "nombre"
+            "descripcion"
+            "ubicacion"
+            "redes";
+        gap: 0.5rem;
+        text-align: center;
+
+        .ubicacion {
+            justify-content: center;
+        }
+    }
+
+    .inferior>.habilidades {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
 }
