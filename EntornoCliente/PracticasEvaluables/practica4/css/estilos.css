@@ -13,8 +13,14 @@
 * {
     box-sizing: border-box;
 }
-
+/************************** Inmobiliaria ************************** */
+.inmobiliaria{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 /************************** Edificio ************************** */
+
 .edificio {
     border:5px solid black;
     margin:0 auto;
