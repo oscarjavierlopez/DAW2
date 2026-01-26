@@ -1,10 +1,15 @@
+/*La versión original con scroll vertical es la del dia 20 de enero*/
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    width: 100%;
     height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-size: clamp(8px, 2vw, 1rem);
+    /*Para que las letras se adapten al tamaño de la pantalla*/
 }
 
 .calendar-container {
@@ -17,45 +22,68 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 90px;
 }
 
-.weekDays{
+.weekDays {
     display: grid;
+    height: 38px;
     grid-template-columns: repeat(7, 1fr);
     gap: 1px;
 }
 
-.days-grid {
-    border: 1px solid grey;
-    display: grid;
-    background-color: grey;
-    gap: 1px;
-    grid-template-columns: repeat(7, 1fr);
-    grid-auto-rows: 1fr;
-    width: 100%;
-    height: 100%;
-}
-
-.day,
 .weekday {
     text-align: center;
     background-color: white;
     padding: 10px;
 }
 
-.is-inactive{
+.days-grid {
+    border: 1px solid grey;
+    /*Borde externo*/
+    display: grid;
+    background-color: grey;
+    /*Borde interno*/
+    gap: 1px;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 1fr;
+    width: 100%;
+    height: calc(100vh - 90px - 40px - 5px);
+    /*90 del calendar-header, 40 del weekDays y 5 del padding del calendar-container*/
+    /*Con esto quitamos el scroll vertical*/
+}
+
+.day {
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*auto para que no la ponga siempre sino solo en los días que haga falta*/
+    /*Para que, midiendo lo mismo todas las filas, se oculte lo que desborde*/
+}
+
+.is-inactive {
     background-color: lightgrey;
 }
 
-.events-container{
-    display:flex;
+.events-container {
+    display: flex;
     flex-direction: column;
     gap: 5px;
-    margin: 0 2px ;
+    margin: 0 2px;
+    font-size: clamp(8px, 2vw, 1rem);
 }
 
-.event{
+.event {
     border-radius: 5px;
+    margin-bottom: 3px;
+    padding: 2px;
+    white-space: nowrap;
+    /*El texto del contenedor ocupa una unica linea*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*Para que salgan 3 puntos cuando desborde*/
 }
 
 .event--green {
@@ -63,14 +91,9 @@ body {
     background-color: green;
 }
 
-.event--purple{
+.event--purple {
     background-color: purple;
     color: white;
-}
-
-.event--timed
-{
-    background-color: lightblue;
 }
 
 .event--red {
@@ -78,6 +101,30 @@ body {
     background-color: red;
 }
 
-.event-title{
+.event--timed {
+    padding-left: 10px;
+}
+
+/*Viñetas de antes del evento*/
+.event--timed::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    background-color: blue;
+    border-radius: 50%;
+    position: relative;
+    top: 12px;
+    left: -8px;
+}
+
+.event-title {
     font-weight: bold;
+}
+
+.current-day {
+    border-radius: 50%;
+    background-color: blue;
+    padding: 5px;
+    color: white;
 }
