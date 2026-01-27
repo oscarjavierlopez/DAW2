@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location.href</title>
+</head>
+
+<body>
+    <h1>Prueba formularios PHP javascript</h1>
+    <form action="Ejemplo2/pruebaGet.php" method="get">
+        <fieldset>
+            <legend>Prueba con GET</legend>
+            <label for="nombre">nombre:</label>
+            <input type="text" name="nombre" id="nombre">
+            <label for="edad">edad:</label>
+            <input type="text" name="edad" id="edad">
+            <input type="submit" value="Enviar">
+        </fieldset>
+    </form>
+    <script>
+        let nombre = encodeURIComponent('Pepe'); //para poder pasar los parametros en la ruta
+        let edad = encodeURIComponent(10);
+        let url = `http://localhost:8080/location.href/pruebaGet.php?nombre=${nombre}&edad=${edad}`;
+        alert('se enviarán los datos');
+        location.href = url;
+    </script>
+</body>
+
+</html>

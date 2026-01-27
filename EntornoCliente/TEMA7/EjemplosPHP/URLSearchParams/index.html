@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location.href</title>
+</head>
+
+<body>
+    <h1>Prueba formularios PHP javascript</h1>
+    <script>
+        const parametros = new URLSearchParams('nombre=Pepe&edad=10'); //es un objeto con parametros
+        parametros.append('apellido', 'García');
+        console.log(parametros);
+        for (let parametro of parametros) {
+            console.log(parametro);
+        }
+        alert('se enviarán los datos');
+        location.href = `http://localhost:8080/location.href/pruebaGet.php?${parametros.toString()}`;//Hay que hacer el toString()
+    </script>
+</body>
+
+</html>

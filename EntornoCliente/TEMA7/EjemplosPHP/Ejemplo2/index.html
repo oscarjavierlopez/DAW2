@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <form action="Ejemplo2/pruebaGet.php" method="get"> 
+        <fieldset>
+            <legend>Prueba con GET</legend>
+            <label for="nombre">nombre:</label>
+            <input type="text" name="nombre" id="nombre">
+            <label for="edad">edad:</label>
+            <input type="text" name="edad" id="edad">
+            <input type="submit" value="Enviar">
+        </fieldset>
+    </form>
+
+    <script>
+        const formulario = document.forms[0];
+        formulario.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if(formulario.nombre.value === 'Laura'){
+                e.target.submit();
+            }
+        });
+    </script>
+</body>
+</html>
