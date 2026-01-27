@@ -63,6 +63,14 @@ body {
     /*Para que, midiendo lo mismo todas las filas, se oculte lo que desborde*/
 }
 
+ /* Para que no se muestren los fines de semana
+.weekday:nth-child(7n + 6),
+.weekday:nth-child(7n + 7),
+.day:nth-child(7n + 6),
+.day:nth-child(7n + 7){
+    display: hidden;
+}*/
+
 .is-inactive {
     background-color: lightgrey;
 }
