@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandar JSON</title>
+    <style>
+        #datos {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="formdata/pruebaPost.php">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <br>
+        <label for="edad">Edad:</label>
+        <input type="text" id="edad" name="edad">
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <div id="datos">
+        <strong>DATOS:</strong>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let datos = JSON.stringify([
+                {
+                nombre: e.target.nombre.value,
+                edad: e.target.edad.value
+            },
+            {
+               nombre: 'Abelino',
+                edad: 85
+            },
+            {
+               nombre: 'Juana',
+                edad: 70
+            }
+        ]);
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://localhost:8080/Ajax-JSON/pruebaPost.php');
+            xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+            xhr.send(datos);
+            xhr.addEventListener('load', (e) => {
+                if (xhr.status === 200) {
+                    let response = JSON.parse(xhr.response);
+                    response.forEach((persona) => {
+                        document.querySelector('#datos').innerHTML += `
+                    <br>
+                    <strong>Nombre:</strong> ${persona.nombre}<br>
+                    <strong>Edad:</strong> ${persona.edad}`;
+                    });
+                } else {
+                    alert(`ERROR: ${xhr.status} ${xhr.statusText}`);
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
