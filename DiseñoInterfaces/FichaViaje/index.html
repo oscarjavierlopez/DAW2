@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ficha de viaje</title>
-    <link rel="stylesheet" href="normalize.css"> 
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,13 +15,24 @@
             <h2>SCOTLAND</h2>
         </section>
 
-        <img src="assets/bandera_escocia.png" alt="Bandera de escocia">
-
         <article>
+            <img src="assets/bandera_escocia.png" alt="Bandera de escocia">
             <h3>Antigua montaña</h3>
-            <p id="price">600€</p>
-            <p id="fecha">11/04-18/04</p>
-            <p id="reservado">90% reservado</p>
+
+            <div class="content">
+                <div id="precio-fecha">
+                    <p id="price">600 €</p>
+                    <p id="fecha">11/04 - 18/04</p>
+                </div>
+
+                <div class="progress">
+                    <div class="progressBar">
+                        <div id="porcentaje">90 %</div>
+                    </div>
+                    <p id="reservado">90% reservado</p>
+                </div>
+            </div>
+
             <button>ver más</button>
         </article>
     </main>

@@ -1,3 +1,137 @@
-main{
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+main {
+    width: 400px;
     display: grid;
+    grid-template-rows: 20px 1fr 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+section {
+    grid-area: 1 / 1 / 4 / 3;
+    background-color: #e2f58b;
+    z-index: 10;
+    border-radius: 8px;
+    position: relative;
+}
+
+section>h2 {
+    font-family: "Titan One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    letter-spacing: -2px;
+    text-shadow: 1px 2px 2px rgb(154, 139, 139);
+    transform: rotate(270deg) skew(0deg, 5deg);
+    position: absolute;
+    top: 70px;
+    left: -40px;
+    color: #305f8e;
+}
+
+article {
+    grid-area: 2 / 2 / 3 / 5;
+    background-color: black;
+    color: white;
+    z-index: 20;
+    position: relative;
+    padding: 30px 10px 30px 80px;
+    border-radius: 8px;
+}
+
+img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 5px solid white;
+    position: absolute;
+    top: 40px;
+    left: -30px;
+}
+
+h3 {
+    margin: 0;
+    font-weight: 100;
+}
+
+.content{
+    display: flex;
+    padding: 30px 0;
+    gap: 15px;
+}
+
+p{
+    margin: 0;
+}
+
+#precio-fecha{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#price{
+    margin-top: 10px;
+    color: #e2f58b;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#fecha{
+    padding: 1px 25px 1px 0;
+    font-size: 12px;
+    border-right: 0.10rem solid white;
+}
+
+.progressBar{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progressBar::before{
+    content: "";
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+#porcentaje{
+    position: relative;
+    width: 80%;
+    text-align: center;
+    font-size: 8px;
+    color: black;
+    background: linear-gradient(#e66465, #9198e5);
+    padding: 1px;
+}
+
+#reservado{
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+article>button {
+    background-color:#305f8e;
+    border: 0.15rem solid white;
+    color: inherit;
+    border-radius: 20px;
+    padding: 5px 20px;
+    font-size: 14px;
 }
