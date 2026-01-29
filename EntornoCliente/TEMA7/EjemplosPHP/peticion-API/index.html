@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <style>
+        .card-container{
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .card {
+            background: #ffffff;
+            width: 320px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            display: block;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 16px 18px 20px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin: 0 0 10px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #555;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Ver datos curiosos</button>
+    <div class="card-container"></div>
+
+    <script>
+        document.querySelector('button').addEventListener('click', (e) => {
+
+            let xhr = new XMLHttpRequest();
+            xhr.addEventListener('load', (e) => {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let response = JSON.parse(xhr.response);
+
+                    const card = document.createElement('article');
+                    card.classList.add('card');
+                    card.innerHTML = ` <img src="http://localhost:8080/peticion-API/gato.jpg" alt="gatito">
+                    <div class="card-content"> 
+                        <h2 class="card-title">Interesting facts about cats</h2>
+                        <p class="card-description">${response.fact}</p>
+                    </div> `;
+                    document.querySelector('.card-container').append(card);
+                }
+            });
+            xhr.open("get", "https://catfact.ninja/fact");
+            xhr.send();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+[
+    {
+        "nombre": "Tierra",
+        "nombreImagen": "sol.jpg"
+    },
+    {
+        "nombre": "Luna",
+        "nombreImagen": "luna.jpg"
+    }
+]

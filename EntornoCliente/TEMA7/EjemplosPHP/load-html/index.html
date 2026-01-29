@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>load html</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <button>Añadir html</button>
+    <div id="datos"></div>
+
+    <script>
+        document.querySelector('button').addEventListener('click', (e) => {
+            let xhr = new XMLHttpRequest();
+            xhr.addEventListener('load', (e) => {
+                if (xhr.status === 200) {
+                    document.getElementById('datos').innerHTML = xhr.response;
+                }
+            });
+            xhr.open("POST", "http://localhost:8080/load-html/datos.html");
+            xhr.send();
+        });
+    </script>
+</body>
+
+</html>

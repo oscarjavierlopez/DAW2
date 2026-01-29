@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>load json</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <button>Añadir json</button>
+
+    <script>
+        document.querySelector('button').addEventListener('click', (e) => {
+            //FORMA 1: Parsear la respuesta
+            let xhr = new XMLHttpRequest();
+            xhr.addEventListener('load', (e) => {
+                if (xhr.status === 200) {
+                    let response = JSON.parse(xhr.response);
+                    console.log(response);
+                }
+            });
+            xhr.open("get", "http://localhost:8080/load-JSON/astros.json");
+            xhr.send();
+
+            //FORMA 2: Deciele el tipo de respuesta que se espera antes de enviar la peticion
+            let xhr2 = new XMLHttpRequest();
+            xhr2.addEventListener('load', (e) => {
+                if (xhr2.status === 200) {
+                    console.log(xhr2.response);
+                }
+            });
+            xhr2.open("get", "http://localhost:8080/load-JSON/astros.json");
+            xhr2.responseType = 'json';
+            xhr2.send();
+        });
+    </script>
+</body>
+
+</html>

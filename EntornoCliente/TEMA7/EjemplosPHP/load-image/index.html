@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>load image</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Añadir imagen de perro</button>
+    <div id="images"></div>
+
+    <script>
+        document.querySelector('button').addEventListener('click', (e) => {
+            let xhr = new XMLHttpRequest();
+            xhr.addEventListener('load', (e) => {
+                if (xhr.status === 200) {
+                    let img = document.createElement('img');
+                    img.src = URL.createObjectURL(xhr.response);
+                    document.getElementById('images').append(img);
+                }
+            });
+            xhr.open("POST", "http://localhost:8080/load-image/perro.jpg");
+            xhr.responseType = 'blob'; //blob es el formato de imagen
+            xhr.send();
+        });
+    </script>
+</body>
+
+</html>
