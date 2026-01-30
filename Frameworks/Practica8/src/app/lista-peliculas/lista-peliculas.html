@@ -1,0 +1,26 @@
+<h1>Peliculas disponibles:</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>titulo</th>
+            <th>director</th>
+            <th>año</th>
+            <th>genero</th>
+            <th>disponible</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (pelicula of peliculasService.peliculas; track pelicula.id) {
+            <tr>
+                <td>{{pelicula.id}}</td>
+                <td>{{pelicula.titulo}}</td>
+                <td>{{pelicula.director}}</td>
+                <td>{{pelicula.anio}}</td>
+                <td>{{pelicula.genero}}</td>
+                <td>{{pelicula.disponible ? 'sí' : 'no'}}</td>
+            </tr>
+        }
+    </tbody>
+</table>

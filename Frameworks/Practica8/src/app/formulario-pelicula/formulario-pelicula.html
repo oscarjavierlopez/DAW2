@@ -1,0 +1,62 @@
+<div class="form-container">
+    <form [formGroup]="formularioPelicula" (ngSubmit)="submit()">
+        <p>Título:
+            <input type="text" formControlName="titulo">
+        </p>
+        @if (this.formularioPelicula.get('titulo')?.errors?.['required']) {
+        <p class="error">El campo título es obligatorio</p>
+        }
+        @if (this.formularioPelicula.get('titulo')?.errors?.['minlength']) {
+        <p class="error">El campo título debe contener al menos 10 caracteres</p>
+        }
+        @if (this.formularioPelicula.get('titulo')?.errors?.['maxlength']) {
+        <p class="error">El campo título debe contener como máximo 50 caracteres</p>
+        }
+
+        <p>Director:
+            <input type="text" formControlName="director">
+        </p>
+        @if (this.formularioPelicula.get('director')?.errors?.['required']) {
+        <p class="error">El campo director es obligatorio</p>
+        }
+        @if (this.formularioPelicula.get('director')?.errors?.['minlength']) {
+        <p class="error">El campo director debe contener al menos 10 caracteres</p>
+        }
+        @if (this.formularioPelicula.get('director')?.errors?.['maxlength']) {
+        <p class="error">El campo director debe contener como máximo 50 caracteres</p>
+        }
+
+        <p>Año:
+            <input type="number" formControlName="anio">
+        </p>
+        @if (this.formularioPelicula.get('anio')?.errors?.['min']) {
+        <p class="error">El campo año debe ser un número positivo</p>
+        }
+
+        <p>Género:
+            <select formControlName="genero">
+                <option>Drama</option>
+                <option>Acción</option>
+                <option>Thriller</option>
+                <option>Ciencia Ficción</option>
+                <option>Romance</option>
+                <option>Terror</option>
+                <option>Suspense</option>
+                <option>Aventura</option>
+                <option>Documental</option>
+                <option>Fantástico</option>
+                <option>Postapocalíptica</option>
+            </select>
+        </p>
+        @if (this.formularioPelicula.get('genero')?.errors?.['required']) {
+        <p class="error">El campo género es obligatorio</p>
+        }
+
+        <p>
+            <input type="checkbox" formControlName="disponible">Disponible
+        </p>
+        <p><button type="submit">Añadir película</button></p>
+
+        <p class="mensaje">{{this.mensaje}}</p>
+    </form>
+</div>
