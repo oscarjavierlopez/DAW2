@@ -4,6 +4,10 @@ body {
     display: grid;
 }
 
+header {
+    margin: 10px 50px;
+}
+
 header>h1 {
     display: flex;
     justify-content: space-between;
@@ -11,14 +15,15 @@ header>h1 {
     padding: 10px;
 }
 
-
 article>ul {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
-    grid-template-rows: repeat(auto-fit, minmax(100px, 200px));
+    grid-template-columns: repeat(auto-fit, 160px);
+    grid-template-rows: repeat(auto-fit, 200px);
     gap: 5px;
     padding: 30px;
+    justify-content: center;
+    margin: 0;
 }
 
 li {
@@ -39,7 +44,7 @@ span {
     text-align: center;
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-width: 640px) {
     body {
         height: 100vh;
         grid-template-columns: 1fr 2fr;
@@ -47,13 +52,16 @@ span {
         grid-template-areas: "header article";
     }
 
-    header{
-        height: 100%;
+    header {
+        height: calc(100vh - 20px - 44px);
+        margin: 10px 50px;
         grid-area: header;
     }
 
-    article{
+    article {
         grid-area: article;
+        height: 100vh;
+        overflow: scroll;
     }
 
     header>h1 {
@@ -65,13 +73,21 @@ span {
         padding: 10px;
     }
 
+    h1>img{
+        width: 80px;
+        height: 80px;
+    }
+
     article>ul {
-        width: 100%;
+        height: calc(100% - 60px);
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
-        grid-template-rows: repeat(auto-fit, minmax(100px, 200px));
+        grid-template-columns: repeat(auto-fit, 160px);
+        grid-template-rows: repeat(auto-fit, 200px);
         gap: 5px;
         padding: 30px;
-        overflow: scroll;
+    }
+
+    li{
+        font-size: 10px;
     }
 }
