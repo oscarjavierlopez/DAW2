@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidor JSON con API REST</title>
+    <script type="module" src="main.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="posts"></div>
+
+    <form id="insertarAlbum">
+        <fieldset>
+            <legend>Álbumes:</legend>
+            <label for="idUsuario">ID Usuario:</label>
+            <input type="text" name="idUsuario" id="idUsuario"> <br>
+            <label for="titulo">Título:</label>
+            <input type="text" name="titulo" id="titulo"> <br>
+            <button type="submit">Insertar</button>
+        </fieldset>
+    </form>
+
+    <form  id="eliminarAlbum">
+        <fieldset>
+            <legend>Álbumes:</legend>
+            <label for="idAlbum">ID del álbum a eliminar:</label>
+            <input type="text" name="idAlbum" id="idAlbum"> <br>
+            <button type="submit">Borrar</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>
