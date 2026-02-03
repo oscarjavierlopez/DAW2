@@ -29,7 +29,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        session(['email' => $request->email]); //creacion de la variable de sesion email
+        return redirect('clientes');
     }
 
     /**
@@ -43,6 +44,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('login')->with('info', 'Se cerró sesión');
+        //with crea una variable de sesion accesible desde cualquier parte del proyecto
     }
 }

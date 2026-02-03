@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 {{-- Fichero plantilla.blade.php desarrollado por Óscar Javier López Gómez.
- Muestra contenido estático que siempre será visible--}}
+ Muestra contenido estático que siempre será visible --}}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +12,27 @@
     <style>
         body {
             margin: 0;
-            padding: 0;;
+            padding: 0;
+            ;
         }
 
         header {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: space-between;
             background-color: #000;
             color: white;
             gap: 10px;
+
+            input{
+                border: none;
+                background-color: #000;
+                color: white;
+            }
+
+            input:hover{
+                font-weight: bold;
+            }
         }
 
         nav {
@@ -76,10 +88,6 @@
             background-color: #fff;
         }
 
-        img {
-            border-radius: 4px;
-        }
-
         .botones{
             text-decoration: none;
             background-color: #b2a4a4;
@@ -99,18 +107,21 @@
 
 <body>
     <header>
-        <h1>App de citas</h1>
+        <h1>Usuario: {{ session('email') }}</h1>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <input type="submit" value="Cerrar sesión">
+        </form>
     </header>
     <nav>
-        <a href="">Login</a>
-        <a href="">clientes</a>
-        <a href="">servicios</a>
-        <a href="">citas</a>
+        <a href="{{ route('clientes') }}">clientes</a>
+        <a href="{{ route('servicios') }}">servicios</a>
+        <a href="{{ route('citas') }}">citas</a>
     </nav>
 
     @yield('apartado')
 
-    <footer><span>&copy; 2025 Citas</span>  <span>Óscar Javier López Gómez</span></footer>
+    <footer><span>&copy; 2025 Citas</span> <span>Óscar Javier López Gómez</span></footer>
 </body>
 
 </html>
