@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear persona</title>
+</head>
+<body>
+    <form action="{% url 'crear_persona' %}" method="post">
+         {% csrf_token %}
+
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre"><br>
+
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" id="apellido"><br>
+
+        <label for="edad">Edad</label>
+        <input type="number" name="edad" id="edad"><br>
+
+        <label for="dni">DNI</label>
+        <input type="text" name="dni" id="dni"><br>
+
+        <input type="submit" value="Crear">
+    </form>
+</body>
+</html>
