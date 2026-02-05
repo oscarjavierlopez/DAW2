@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio propuesto V</title>
+</head>
+
+<body>
+    <button id="verTodas">verTodas</button>
+    <button id="crearCookie">crearCookie</button>
+    <button id="modificarCookie">modificarCookie</button>
+    <button id="leerCookie">leerCookie</button>
+    <button id="borrarCookie">borrarCookie</button>
+
+    <script>
+        document.getElementById('verTodas').addEventListener('click', () => {
+            console.log(document.cookie);
+        });
+
+        document.getElementById('crearCookie').addEventListener('click', () => {
+            document.cookie = `ies=${encodeURIComponent('Julián Marías')}`;
+        });
+
+        document.getElementById('modificarCookie').addEventListener('click', () => {
+            document.cookie = `ies=${encodeURIComponent('Gómez Pereira')}`;
+        });
+
+        document.getElementById('leerCookie').addEventListener('click', () => {
+            cookieArr = document.cookie.split(';');
+            for (let i = 0; i < cookieArr.length; i++) {
+                const cookieDivided = cookieArr[i].split('=')
+                if (cookieDivided[0].trim() === 'ies') {
+                    console.log(decodeURIComponent(cookieDivided[1]));
+                }
+            }
+        });
+
+        document.getElementById('borrarCookie').addEventListener('click', () => {
+            document.cookie = `ies=${encodeURIComponent('Gómez Pereira')}; max-age=0`;
+        });
+    </script>
+</body>
+
+</html>
