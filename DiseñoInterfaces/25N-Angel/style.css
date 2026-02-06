@@ -157,9 +157,7 @@ article li > span:last-child {
     margin-bottom: 0;
     font-size: 8vw;
   }
-  article li:first-child {
-    grid-column: 3;
-  }
+  
   article li:first-child {
     grid-area: 1/1/2/4;
   }
