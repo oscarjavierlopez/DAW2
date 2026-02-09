@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-blue: #1C6CB3;
+    --primary-yellow: #F5A623;
+    --primary-green: #4A9155;
+    --main-background: rgb(26, 35, 51);
+    --white: #FFF;
+    --semi-black: #4a4a4a;
+    --black: #000;
+}
+
+html {
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    background-color: rgb(26, 25, 31);
+}
+
+main {
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    border-bottom: 2px solid var(--primary-yellow);
+    padding: 0 1rem;
+}
+
+.logo {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.img img {
+    width: 3rem;
+    height: 3rem;
+    box-sizing: border-box;
+}
+
+.logo-content {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    padding-top: 0.7rem;
+    margin-bottom: 0;
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 900;
+}
+
+h1>span {
+    color: var(--primary-yellow);
+}
+
+.logo-content>p {
+    position: absolute;
+    top: -500px;
+}
+
+nav {
+    width: 100%;
+}
+
+nav>ol {
+    margin: 0;
+    width: 100%;
+    margin-top: 2rem;
+    font-size: 0.65rem;
+    display: flex;
+    padding: 0;
+    padding-left: 1rem;
+    justify-content: space-around;
+}
+
+nav>ol>li {
+    list-style: none;
+}
+
+nav>ol>li>a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+.orange {
+    background-color: var(--primary-yellow);
+    padding: 0.25rem;
+    color: var(--black);
+    font-weight: 900;
+    position: relative;
+    border: 1px solid var(--white);
+    z-index: 10;
+}
+
+.orange::after {
+    content: "";
+    position: absolute;
+    top: 0.3rem;
+    left: 0.2rem;
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
+.banner {
+    position: absolute;
+    top: -40000px;
+}
+
+.hero {
+    background-image: url(images/247703.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 1rem;
+    margin: 1rem;
+    border: 2px solid var(--black);
+    border-bottom: 4px solid var(--primary-yellow);
+    border-right: 4px solid var(--primary-yellow);
+}
+
+.green {
+    font-size: 0.65rem;
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-decoration: none;
+    position: relative;
+    border: 1px solid var(--white);
+    z-index: 10;
+    padding: 0.25rem;
+    border: 1px solid var(--black);
+}
+
+.green::after {
+    content: "";
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
+.hero>h2 {
+    margin: 0;
+    font-size: 5rem;
+}
+
+.hero>p:nth-child(3) {
+    padding-left: 0.6rem;
+    color: var(--white);
+    border-left: 4px solid var(--primary-yellow);
+    font-size: 0.875rem;
+}
+
+.hero>div:nth-child(4) {
+    display: flex;
+    gap: 1rem;
+}
+
+.blue {
+    font-size: 0.65rem;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    text-decoration: none;
+    position: relative;
+    border: 2px solid var(--white);
+    z-index: 10;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--black);
+    font-weight: 500;
+}
+
+.blue::after {
+    content: "";
+    position: absolute;
+    top: 0.3rem;
+    left: 0.2rem;
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
+.alpha {
+    font-size: 0.65rem;
+    color: var(--white);
+    text-decoration: none;
+    position: relative;
+    border: 4px solid var(--white);
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--black);
+    font-weight: 500;
+    border-bottom: 4px solid var(--white);
+    border-right: 4px solid var(--white);
+}
+
+.stats {
+    margin-top: 1rem;
+    height: 300px;
+    background-color: var(--black);
+    background-image: url(images/fp.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.screen {
+    padding: 0.3rem;
+    margin: 1rem;
+    background-color: var(--main-background);
+    grid-area: 3/4/4/5;
+    color: var(--white);
+    border-top: 2px solid var(--primary-green);
+    border-left: 2px solid var(--primary-green);
+    border-bottom: 4px solid var(--white);
+    border-right: 4px solid var(--white);
+}
+
+.screen>p {
+    font-size: 0.5rem;
+}
+
+.big {
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+footer {
+    color: var(--white);
+    border-top: 4px solid var(--semi-black);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: var(--black);
+    gap: 1rem;
+    padding: 2rem 1rem;
+}
+
+footer>div:first-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo>p:nth-child(3){
+    position: absolute;
+    top: -400px;
+}
+
+footer>div:first-child>p:nth-child(2){
+    font-size: 0.4rem;
+}
+
+footer dt{
+    width: 120px;
+    color: var(--primary-yellow);
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid var(--primary-yellow);
+}
+
+dd:first-of-type{
+    margin-top: 1rem;
+}
+
+dd{
+    margin: 0;
+    font-size: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--white);
+    width: 100%;
+}
+
+footer>.footer{
+    font-size: 0.4rem;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid var(--semi-black);
+}
+
+@media (min-width: 1000px){
+    .logo-content>p{
+        position: inherit;
+        color: var(--primary-green);
+        font-size: 0.5rem;
+    }
+
+    .banner{
+        border-bottom: 2px solid var(--white);
+        position: relative;
+        top: 0;
+        background-color: var(--primary-blue);
+        padding: 0.15rem;
+    }
+
+    .banner ul {
+        display: flex;
+        justify-content: space-around;
+        font-size: 0.5rem;
+        color: white;
+        font-weight: 500;
+    }
+
+    .banner li{
+        list-style: none;
+    }
+}
