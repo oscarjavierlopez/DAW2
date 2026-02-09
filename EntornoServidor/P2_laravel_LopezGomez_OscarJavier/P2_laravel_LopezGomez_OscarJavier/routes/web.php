@@ -17,6 +17,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::get('/inicio', [PagesController::class, 'inicio'])->name('inicio');
+
+
     Route::get('/clientes', [PagesController::class, 'clientes'])->name('clientes');
     Route::get('/clientes/crear', [PagesController::class, 'formulario_creacion_cliente'])->name('clientes.formulario');
     Route::post('/clientes', [PagesController::class, 'crear_cliente'])->name('clientes.crear');
@@ -35,6 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/servicios/{id}', [PagesController::class, 'editar_servicio'])->name('servicios.editar');
 
     Route::get('/citas', [PagesController::class, 'citas'])->name('citas');
+    Route::get('/citas/semana_actual', [PagesController::class, 'citas_semana_actual'])->name('citas.semana_actual');
     Route::get('/citas/crear', [PagesController::class, 'formulario_creacion_cita'])->name('citas.formulario');
     Route::post('/citas', [PagesController::class, 'crear_cita'])->name('citas.crear');
     Route::get('/citas/editar/{id}', [PagesController::class, 'formulario_edicion_cita'])->name('citas.formulario.edicion');

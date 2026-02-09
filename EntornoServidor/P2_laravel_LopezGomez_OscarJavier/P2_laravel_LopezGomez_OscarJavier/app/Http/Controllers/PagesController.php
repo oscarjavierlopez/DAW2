@@ -11,6 +11,16 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+    public function inicio(){
+        $citas = Cita::all();
+        $citas_activas = Cita::where('estado', 'activa')->get();
+        $citas_canceladas = Cita::where('estado', 'cancelada')->get();
+        $clientes_activos = Cliente::where('activo', '1')->get();
+        $servicios_activos = Servicio::where('activo', '1')->get();
+
+        return view('inicio', compact('citas', 'citas_activas', 'citas_canceladas', 'clientes_activos', 'servicios_activos'));
+    }
+
     public function clientes()
     {
         $clientes = Cliente::paginate(5);
@@ -133,9 +143,108 @@ class PagesController extends Controller
         return back()->with('mensaje', 'servicio actualizado correctamente');
     }
 
-    public function citas()
+    public function citas(Request $request)
     {
-        $citas = User::where('email', session('email'))->first()->citas;
+        $citas = User::where('email', session('email'))->first()->citas()
+            ->when($request->hora, fn($q) => $q->where('hora', $request->hora))->get();
+
+        if ($request->filled('hora')) {
+            cookie()->queue('hora', $request->hora); //queue lo envia al navegador
+        }
+
+        return view('citas', compact('citas'));
+    }
+
+    public function citas_semana_actual()
+    {
+        $week_day = date('D');
+        switch ($week_day) {
+            case 'Mon':
+                $semana_actual = [
+                    date("Y-m-d"),
+                    date('Y-m-d', strtotime('+1 day')),
+                    date('Y-m-d', strtotime('+2 days')),
+                    date('Y-m-d', strtotime('+3 days')),
+                    date('Y-m-d', strtotime('+4 days')),
+                    date('Y-m-d', strtotime('+5 days')),
+                    date('Y-m-d', strtotime('+6 days'))
+                ];
+                break;
+            case 'Tue':
+                $semana_actual = [
+                    date('Y-m-d', strtotime('-1 day')),
+                    date("Y-m-d"),
+                    date('Y-m-d', strtotime('+1 day')),
+                    date('Y-m-d', strtotime('+2 days')),
+                    date('Y-m-d', strtotime('+3 days')),
+                    date('Y-m-d', strtotime('+4 days')),
+                    date('Y-m-d', strtotime('+5 days'))
+                ];
+                break;
+            case 'Wed':
+                $semana_actual = [
+                    date('Y-m-d', strtotime('-2 days')),
+                    date('Y-m-d', strtotime('-1 day')),
+                    date("Y-m-d"),
+                    date('Y-m-d', strtotime('+1 day')),
+                    date('Y-m-d', strtotime('+2 days')),
+                    date('Y-m-d', strtotime('+3 days')),
+                    date('Y-m-d', strtotime('+4 days'))
+                ];
+                break;
+            case 'Thu':
+                $semana_actual = [
+                    date('Y-m-d', strtotime('-3 days')),
+                    date('Y-m-d', strtotime('-2 days')),
+                    date('Y-m-d', strtotime('-1 day')),
+                    date("Y-m-d"),
+                    date('Y-m-d', strtotime('+1 day')),
+                    date('Y-m-d', strtotime('+2 days')),
+                    date('Y-m-d', strtotime('+3 days'))
+                ];
+                break;
+            case 'Fri':
+                $semana_actual = [
+                    date('Y-m-d', strtotime('-4 days')),
+                    date('Y-m-d', strtotime('-3 days')),
+                    date('Y-m-d', strtotime('-2 days')),
+                    date('Y-m-d', strtotime('-1 day')),
+                    date("Y-m-d"),
+                    date('Y-m-d', strtotime('+1 day')),
+                    date('Y-m-d', strtotime('+2 days'))
+                ];
+                break;
+            case 'Sat':
+                $semana_actual = [
+                    date('Y-m-d', strtotime('-5 days')),
+                    date('Y-m-d', strtotime('-4 days')),
+                    date('Y-m-d', strtotime('-3 days')),
+                    date('Y-m-d', strtotime('-2 days')),
+                    date('Y-m-d', strtotime('-1 day')),
+                    date("Y-m-d"),
+                    date('Y-m-d', strtotime('+1 day'))
+                ];
+                break;
+
+            case 'Sat':
+                $semana_actual = [
+                    date('Y-m-d', strtotime('-6 days')),
+                    date('Y-m-d', strtotime('-5 days')),
+                    date('Y-m-d', strtotime('-4 days')),
+                    date('Y-m-d', strtotime('-3 days')),
+                    date('Y-m-d', strtotime('-2 days')),
+                    date('Y-m-d', strtotime('-1 day')),
+                    date("Y-m-d")
+                ];
+                break;
+        }
+
+        $citas = User::where('email', session('email'))->first()->citas()
+            ->whereIn('fecha', $semana_actual)
+            ->orderBy('fecha', 'asc')
+            ->orderBy('hora', 'asc')
+            ->get();
+
         return view('citas', compact('citas'));
     }
 
@@ -174,7 +283,7 @@ class PagesController extends Controller
                 }
             ],
             'estado'    => ['required', 'string', 'in:activa,cancelada'],
-            'notas' => ['nullable', 'string']
+            'notas' => ['nullable', 'string', 'max:255']
         ]);
 
         $cita = new Cita();
@@ -225,7 +334,7 @@ class PagesController extends Controller
                 }
             ],
             'estado'    => ['required', 'string', 'in:activa,cancelada'],
-            'notas' => ['nullable', 'string']
+            'notas' => ['nullable', 'string', 'max:255']
         ]);
 
         $cita = Cita::find($id);

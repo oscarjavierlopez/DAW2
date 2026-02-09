@@ -22,9 +22,8 @@
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Teléfono</th>
-                <th>Detalles</th>
                 <th>Editar</th>
-                <th>Borrar</th>
+                <th>Detalles</th>
             </tr>
         </thead>
 
@@ -36,13 +35,6 @@
                     <td>{{ $cliente->telefono }}</td>
                     <td><a href="{{ route('clientes.formulario.edicion', $cliente->id) }}" class="botones">Editar</a></td>
                     <td><a href="{{ route('detalles.cliente', $cliente->id) }}" class="botones">Ver detalles</a></td>
-                    <td>
-                        <form action="{{ route('clientes.eliminar', $cliente->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="botones">Borrar</button>
-                        </form>
-                    </td>
                 </tr>
             @endforeach
         </tbody>

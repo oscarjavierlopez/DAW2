@@ -114,6 +114,7 @@
         </form>
     </header>
     <nav>
+        <a href="{{ route('inicio') }}">inicio</a>
         <a href="{{ route('clientes') }}">clientes</a>
         <a href="{{ route('servicios') }}">servicios</a>
         <a href="{{ route('citas') }}">citas</a>

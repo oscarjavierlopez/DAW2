@@ -23,7 +23,6 @@
                 <th>Precio</th>
                 <th>Duración</th>
                 <th>Editar</th>
-                <th>Borrar</th>
             </tr>
         </thead>
 
@@ -34,13 +33,6 @@
                     <td>{{ $servicio->precio }}</td>
                     <td>{{ $servicio->duracion_minutos }} mins</td>
                     <td><a href="{{ route('servicios.formulario.edicion', $servicio->id) }}" class="botones">Editar</a></td>
-                    <td>
-                        <form action="{{ route('servicios.eliminar', $servicio->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="botones">Borrar</button>
-                        </form>
-                    </td>
                 </tr>
             @endforeach
         </tbody>

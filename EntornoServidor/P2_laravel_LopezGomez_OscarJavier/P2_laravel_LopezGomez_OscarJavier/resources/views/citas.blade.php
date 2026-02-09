@@ -2,6 +2,10 @@
 
 @push('styles')
     <style>
+        form {
+            padding: 0 30px
+        }
+
         .addCita {
             display: flex;
             justify-content: space-between;
@@ -12,9 +16,25 @@
 @endpush
 
 @section('apartado')
+    @if (request()->cookie('hora'))
+        <form method="GET">
+            <input type="time" name="hora" value="{{ request()->cookie('hora') }}">
+            <button type="submit">Filtrar</button>
+        </form>
+    @else
+        <form method="GET">
+            <input type="time" name="hora">
+            <button type="submit">Filtrar</button>
+        </form>
+    @endif
+
     <div class="addCita">
         <h2>Citas</h2>
-        <a href="{{ route('citas.formulario') }}" class="botones">Añadir Cita</a>
+
+        <div class="redirect">
+            <a href="{{ route('citas.formulario') }}" class="botones">Añadir Cita</a>
+            <a href="{{ route('citas.semana_actual') }}" class="botones">citas semana actual</a>
+        </div>
     </div>
 
     <table>
@@ -38,7 +58,7 @@
                     <td>{{ $cita->fecha }}</td>
                     <td>{{ $cita->hora }}</td>
                     <td>{{ $cita->estado }}</td>
-                    <td>{{ $cita->notas }}</td>
+                    <td>{{ strlen($cita->notas) > 0 ? $cita->notas : 'Sin notas' }}</td>
                     <td><a href="{{ route('citas.formulario.edicion', $cita->id) }}" class="botones">Editar</a></td>
                 </tr>
             @endforeach

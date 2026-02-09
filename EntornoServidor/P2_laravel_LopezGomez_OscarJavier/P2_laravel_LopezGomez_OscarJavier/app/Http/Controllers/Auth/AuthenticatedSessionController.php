@@ -30,7 +30,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         session(['email' => $request->email]); //creacion de la variable de sesion email
-        return redirect('clientes');
+        return redirect('inicio');
     }
 
     /**

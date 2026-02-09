@@ -112,6 +112,11 @@
 
         <label for="notas">Notas</label>
         <textarea name="notas" id="notas" cols="30" rows="10"></textarea>
+        @error('notas')
+            <div class="error">
+                Las notas no pueden tener más de 255 carcateres
+            </div>
+        @enderror
 
         <input type="submit" value="Enviar">
 
