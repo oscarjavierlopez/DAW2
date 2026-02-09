@@ -1,6 +1,7 @@
 const ul = document.createElement('ul');
 const fooInsertar = document.querySelector('#insertarAlbum');
 const fooDelete = document.querySelector('#eliminarAlbum');
+const fooUpdate = document.querySelector('#actualizarUsuario');
 
 let xhr = new XMLHttpRequest();
 xhr.addEventListener('load', (e) => {
@@ -42,17 +43,47 @@ fooInsertar.addEventListener('submit', (e) => {
 
 fooDelete.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     let xhr = new XMLHttpRequest();
     xhr.open('DELETE', `http://localhost:3000/albums/${e.target.idAlbum.value}`);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send();
     xhr.addEventListener('load', (e) => {
         if (xhr.status >= 200) {
-            console.log('eliminado');
+            console.log('albúm eliminado');
         } else {
             alert(`ERROR: ${xhr.status} ${xhr.statusText}`);
         }
     });
-})
+});
+
+fooUpdate.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let data = {}
+
+    if (!/^\s*$/.test(e.target.name.value)) {
+        data = {...data, name: e.target.name.value}
+    }
+
+    if (!/^\s*$/.test(e.target.username.value)) {
+        data = {...data, name: e.target.username.value}
+    }
+
+    if (!/^\s*$/.test(e.target.email.value)) {
+        data = {...data, name: e.target.email.value}
+    }
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('PATCH', `http://localhost:3000/users/${e.target.idUsuario.value}`);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(data));
+    xhr.addEventListener('load', (e) => {
+        if (xhr.status === 200) {
+            console.log('usuario actualizado');
+        } else {
+            alert(`ERROR: ${xhr.status} ${xhr.statusText}`);
+        }
+    });
+});
 

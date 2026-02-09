@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie desde js</title>
+</head>
+
+<body>
+    <script>
+        document.cookie = 'usuario=Pepe';
+        document.cookie = 'nombre=' + encodeURIComponent('Pepe Pérez');
+
+        //cookie que expira
+        const expires = new Date();
+        expires.setTime(expires.getTime() + 60 * 1000); //el tiempo de expiracion en ms
+        document.cookie = `telefono=983887665; expires=${expires.toUTCString()}`;
+
+        //con una funcion
+        function setCookie(name, value, daysToLive) {
+            let cookie = `name=${encodeURIComponent(value)}`;
+            if (typeof daysToLive === "number") {
+                cookie += `;max-age=${daysToLive * 24 * 60 * 60}`; //max-age va en segundos
+            }
+            document.cookie = cookie;
+        }
+
+        function getCookie(name) {
+            const cookieArr = document.cookie.split(';');
+            for (let i = 0; i < cookieArr.length; i++) {
+                const cookiePair = cookieArr[i].split('=');
+                if (name === cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            return null;
+        }
+
+        setCookie('user', 'Pepe', 1); //crea el nombre
+        console.log(getCookie('user'));
+        setCookie('user', 'Juan', 1) //Modifica el nombre
+        setCookie('user', '', 0) //Elimina el nombre
+    </script>
+</body>
+
+</html>

@@ -10,7 +10,7 @@ body {
 }
 
 main {
-    width: 400px;
+    width: 30vw;
     display: grid;
     grid-template-rows: 20px 1fr 20px;
     grid-template-columns: repeat(4, 1fr);

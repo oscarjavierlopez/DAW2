@@ -1,0 +1,266 @@
+:root {
+    --body-bg-color: rgb(247, 247, 247);
+    --button-bg-color: rgb(59, 107, 120);
+    --button-bg-color-hover: rgb(50, 85, 95);
+    --socialNetwork-bg-color-hover: rgba(195, 206, 211, 0.925);
+    --descripcion-ubicacion-color: rgb(59, 107, 120);
+    --progress-bar-container: rgb(229, 231, 235);
+}
+
+body {
+    background-color: var(--body-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-family: Epilogue, sans-serif;
+}
+
+article {
+    margin: 1rem 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+    width: 85%;
+    min-width: 280px;
+    max-width: 750px;
+    background-color: #fff;
+    box-shadow: 2px 5px 9px 0px rgba(0, 0, 0, 0.36);
+}
+
+article:hover {
+    box-shadow: 4px 12px 24px 0px rgba(0, 0, 0, 0.45);
+}
+
+article>.superior {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    text-align: center;
+}
+
+article>.superior>.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article>.superior>.avatar>img {
+    border-radius: 50%;
+    border: 5px double rgba(206, 209, 213, 0.5);
+}
+
+article>.superior>h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+article>.superior>.descripcion {
+    color: var(--descripcion-ubicacion-color);
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+article>.superior>.ubicacion {
+    color: var(--descripcion-ubicacion-color);
+    display: flex;
+    justify-content: center;
+    line-height: 1.25rem;
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.ubicacion>img{
+    font-size: 0.875rem;
+}
+
+.ubicacion>p{
+    margin: 0;
+}
+
+article>.superior>.social-networks{
+    margin: 0;
+}
+
+article>.superior>.social-networks>ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0;
+}
+
+.social-networks>ul>li{
+    list-style: none;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    background-color: var(--body-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.social-networks>ul>li:hover{
+    background-color: var(--socialNetwork-bg-color-hover);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+
+
+article>.inferior{
+    background-color: var(--body-bg-color);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.inferior>.container{
+    padding: 1.5rem;
+}
+
+.inferior h3{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+
+.inferior .habilidades{
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0.8rem;
+}
+
+.habilidades .habilidad{
+    display: flex;
+    justify-content: space-between;
+}
+
+.habilidad>p:first-child{
+    line-height: 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.habilidad>p:last-child{
+    color: var(--button-bg-color);
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 700;
+}
+
+
+.progressBarBarContainer {
+    background-color: var(--progress-bar-container);
+    height: 6px;
+    border-radius: 12px;
+}
+
+.UI-UX .progressBar {
+    background-color: var(--button-bg-color);
+    height: 100%;
+    border-radius: 12px;
+    width: 90%;
+}
+
+.Frontend-Development .progressBar {
+    background-color: var(--button-bg-color);
+    height: 100%;
+    border-radius: 12px;
+    width: 75%;
+}
+
+.Product-Strategy .progressBar {
+    background-color: var(--button-bg-color);
+    height: 100%;
+    border-radius: 12px;
+    width: 85%;
+}
+
+.Brand-Identity .progressBar {
+    background-color: var(--button-bg-color);
+    height: 100%;
+    border-radius: 12px;
+    width: 80%;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+button{
+    background-color: var(--button-bg-color);
+    color: #fff;
+    padding: 1rem 3rem;
+    border-radius: 1.5rem;
+    border-color: #e5e7eb;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+}
+
+button:hover{
+    background-color: var(--button-bg-color-hover);
+}
+
+@media (min-width: 700px){
+    article>.superior{
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+        "avatar nombre"
+        "avatar descripcion"
+        "avatar ubicacion"
+        "avatar redes"
+        ;
+        column-gap: 2rem;
+        text-align: left;
+    }
+    
+article>.superior>.avatar {
+    grid-area: avatar;
+}
+
+article>.superior>h1 {
+    font-size: 2.25rem;
+    grid-area: nombre;
+}
+
+article>.superior>.descripcion {
+    grid-area: descripcion;
+}
+
+article>.superior>.ubicacion {
+    grid-area: ubicacion;
+    justify-content: flex-start;
+}
+
+article>.superior>.social-networks {
+    grid-area: redes;
+
+    ul{
+        justify-content: flex-start;
+    }
+}
+
+.inferior .habilidades{
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2.5rem;
+}
+
+}

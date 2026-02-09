@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2. Maestro-Detalle simple</title>
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Nombre de usuario</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <form>
+            <h2>Detalle de usuario</h2>
+
+            <label for="id">ID</label>
+            <input type="text" name="idUsuario" id="id" placeholder="Identificador">
+
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+
+            <label for="nombreUsuario">Nombre de usuario</label>
+            <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de usuario">
+
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="Email">
+
+            <label for="ciudad">Ciudad</label>
+            <input type="text" name="ciudad" id="ciudad" placeholder="Ciudad">
+
+            <div class="buttons">
+                <button type="button" id="actualizar">Actualizar</button>
+                <button type="button" id="insertar">Insertar</button>
+                <button type="button" id="eliminar">Eliminar</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
