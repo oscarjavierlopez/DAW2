@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage</title>
+</head>
+<body>
+    <script>
+        //Localstorage almacena de forma permanente la info y session storage la borra al cerrar la ventana
+
+        localStorage.setItem('jugador1', 'Fermín'); //se crea
+        localStorage.setItem('jugador1', 'Javier');//se actualiza1
+
+        let jugador1 = localStorage.getItem('jugador1'); //accedo al valor
+        console.log(jugador1);
+
+        localStorage.setItem('jugador2', 'Fermín');
+        
+        for (let [clave, valor] of Object.entries(localStorage)) { //recorrer el local storage
+            console.log(`${clave} : ${valor}`);
+        }
+
+        localStorage.removeItem('jugador1')//eliminar un item
+
+        //localStorage.clear();//podemos borrar todo el localstorage
+    </script>
+</body>
+</html>

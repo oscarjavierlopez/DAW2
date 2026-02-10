@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar que no se pueda enviar de manera érronea el formulario más de 3 veces</title>
+    <script type="module" src="main.js"></script>
+    <style>
+        .hidden{
+            position: absolute;
+            top: -44000px;
+        }
+
+        #intentos{
+            margin-top: 1rem;
+            max-width: 300px;
+        }
+
+        .intentos-correctos{
+            border: 4px solid green;
+            background-color: rgb(175, 201, 175);
+            color: green;
+        }
+
+        .intentos-incorrectos{
+            border: 4px solid red;
+            background-color: rgb(180, 162, 162);
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required><br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" name="apellidos" id="apellidos" required><br>
+
+        <label for="fechaNacimiento">Fecha de nacimiento:</label>
+        <input type="date" name="fechaNacimiento" id="fechaNacimiento"><br>
+
+        <label for="DNI">DNI:</label>
+        <input type="text" name="DNI" id="DNI" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" name="contrasena" id="contrasena" required><br>
+
+        <label for="contrasena-repeticion">Contraseña(repetición):</label>
+        <input type="password" name="contrasena-repeticion" id="contrasena-repeticion" required><br>
+
+        <p>Género:
+            <input type="radio" name="genero" id="hombre" value="hombre"> <label for="hombre">Hombre</label>
+            <input type="radio" name="genero" id="mujer" value="mujer"> <label for="mujer">Mujer</label>
+        </p>
+
+        <input type="checkbox" name="suscribir" id="suscribir"><label for="suscribir">Suscribirme al boletín de
+            novedades</label><br>
+        <input type="checkbox" name="informar" id="informar"><label for="informar">Informarme sobre ofertas</label><br>
+
+        <label for="prouctoFav">Producto favorito</label>
+        <select name="prouctoFav" id="prouctoFav">
+            <option value="naranja">Naranja</option>
+            <option value="pera">Pera</option>
+            <option value="manzana">Manzana</option>
+        </select><br>
+
+        <label for="comentario">Comentario</label>
+        <textarea name="comentario" id="comentario" rows="5" cols="20">Introduce un comentario</textarea><br>
+
+        <input type="submit" value="Enviar datos">
+    </form>
+
+    <div class="hidden" id="intentos"></div>
+</body>
+
+</html>
