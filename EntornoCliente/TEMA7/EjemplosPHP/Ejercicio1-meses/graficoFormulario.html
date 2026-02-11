@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducir datos</title>
+</head>
+<body>
+    <h1>Introducir datos</h1>
+
+    <form>
+        <fieldset>
+            <legend>Datos para gráfico</legend>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" required><br>
+            <label for="valor">Valor</label>
+            <input type="range" name="valor" id="valor" min="0" max="10" required><br>
+            <label for="color">Color</label>
+            <input type="color" name="color" id="color" required><br>
+            <input type="submit" value="Añadir valor">
+        </fieldset>
+    </form>
+
+    <script>
+        const foo =document.querySelector('form');
+        foo.addEventListener('submit', (e) =>{
+            e.preventDefault();
+
+            const newMonth = {
+                valor: foo.valor.value,
+                color: foo.color.value
+            }
+
+            localStorage.setItem(foo.nombre.value, JSON.stringify(newMonth));
+        });
+    </script>
+</body>
+</html>

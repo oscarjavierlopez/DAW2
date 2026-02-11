@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico</title>
+    <style>
+        #grafico {
+            background-color: rgb(89, 90, 87);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Gráfico</h1>
+    <canvas id="grafico" width="800" height="800"></canvas>
+
+    <script>
+        function draw() {
+            const canvas = document.getElementById("grafico");
+            const ctx = canvas.getContext("2d");
+
+            void ctx.clearRect(0, 0, 800, 800);
+
+            let count = 1;
+            for (let [key, value] of Object.entries(localStorage)) {
+                const { valor, color } = JSON.parse(value);
+                console.log(key + " " + valor + " " + color);
+ 
+                ctx.fillStyle = '#000';
+                ctx.fillText(key, 0, 23 * count);
+                ctx.fillStyle = color;
+                ctx.fillRect(100, 20 * count, (valor * 10) * 700 / 100 , 20);
+
+                count++;
+            }
+
+        }
+
+
+        draw(); //cuando se carga la pagina
+        window.addEventListener('storage', draw);//cuando se modifica localstorage
+    </script>
+</body>
+
+</html>
