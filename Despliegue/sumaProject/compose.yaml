@@ -1,0 +1,6 @@
+services:
+  app:
+    image: proyecto_suma
+    environment:
+      - VAR_A=3
+      - VAR_B=5
