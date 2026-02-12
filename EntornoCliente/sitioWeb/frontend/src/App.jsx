@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import { Header } from './components/header'
-import './App.css'
+import { createContext } from 'react';
+import { Routes, Route } from "react-router";
+import { Home } from './pages/home';
+import { Login } from './pages/login';
+
+export const userContext = createContext();
 
 function App() {
-  const [eventos, setEventos] = useState([])
+  const [eventos, setEventos] = useState([]);
+  const [user, setUser] = useState();
 
   useEffect(() => {
     fetch('http://localhost:3000/eventos')
@@ -14,12 +19,12 @@ function App() {
   }, [])
 
   return (
-    <>
-      <Header></Header>
-      <ul className='m-4'>{eventos.map(evento => (
-        <li key={evento.id} className='text-white'>{evento.nombre}, MUNICIPIO: {evento.municipio.nombre}</li>
-      ))}</ul>
-    </>
+    <userContext.Provider value={{ user, setUser }}>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+      </Routes>
+    </userContext.Provider>
   )
 }
 
