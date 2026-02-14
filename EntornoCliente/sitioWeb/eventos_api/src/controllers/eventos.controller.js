@@ -63,6 +63,23 @@ export class EventosApiController {
         res.status(200).json(eventos);
     }
 
+    static async getById(req, res) {
+        const id = parseInt(req.params.id);
+
+        const event = await prisma.eventos.findUnique({
+            where: {
+                id: id,
+            },
+            include: {
+                municipio: true,
+            },
+        });
+
+        if (!event) return res.status(404).json({ error: 'evento no encontrado' });
+
+        res.status(200).json(event);
+    }
+
     static async create(req, res) {
         const { nombre, fecha, descripcion, imagen, id_municipio } = req.body;
 

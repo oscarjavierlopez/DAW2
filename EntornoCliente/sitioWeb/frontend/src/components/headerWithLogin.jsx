@@ -11,7 +11,7 @@ export function HeaderWithLogin() {
     }
 
     return (
-        <header className="flex justify-between items-center mb-6 px-8 py-10">
+        <header className="flex justify-between items-center mb-2 px-8 py-4">
             <div className="flex items-center justify-between gap-3">
                 <AccountCircleIcon fontSize="large" className="bg-blue-700 rounded-full" />
                 <div>

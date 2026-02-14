@@ -5,24 +5,19 @@ import { createContext } from 'react';
 import { Routes, Route } from "react-router";
 import { Home } from './pages/home';
 import { Login } from './pages/login';
+import { DetallesEvento } from './pages/detallesEvento';
 
 export const userContext = createContext();
 
 function App() {
-  const [eventos, setEventos] = useState([]);
   const [user, setUser] = useState();
-
-  useEffect(() => {
-    fetch('http://localhost:3000/eventos')
-      .then(response => response.json())
-      .then(data => setEventos(data));
-  }, [])
 
   return (
     <userContext.Provider value={{ user, setUser }}>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/detallesEvento/:id' element={<DetallesEvento />} />
       </Routes>
     </userContext.Provider>
   )
