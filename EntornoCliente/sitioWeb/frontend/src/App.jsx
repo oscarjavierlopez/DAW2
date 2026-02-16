@@ -5,7 +5,6 @@ import { createContext } from 'react';
 import { Routes, Route } from "react-router";
 import { Home } from './pages/home';
 import { Login } from './pages/login';
-import { DetallesEvento } from './pages/detallesEvento';
 
 export const userContext = createContext();
 
@@ -17,7 +16,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/detallesEvento/:id' element={<DetallesEvento />} />
       </Routes>
     </userContext.Provider>
   )

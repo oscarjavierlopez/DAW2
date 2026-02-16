@@ -26,7 +26,6 @@ export class EventosApiController {
             },
             include: {
                 rol: true,
-                eventos: true,
             },
         });
 
@@ -41,7 +40,6 @@ export class EventosApiController {
                 id: usuario.id,
                 nombre: usuario.nombre,
                 rol: usuario.rol.rol,
-                eventos: usuario.eventos,
             }
         });
     }

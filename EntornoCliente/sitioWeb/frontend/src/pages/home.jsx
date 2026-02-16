@@ -8,6 +8,7 @@ import { Modal } from "../components/modalForm";
 import AddIcon from '@mui/icons-material/Add';
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { NavBar } from "../components/NavBar";
 
 export function Home() {
     const { user, setUser } = useContext(userContext);
@@ -19,16 +20,29 @@ export function Home() {
     const [eventToEditId, setEventToEditId] = useState();
     const [viewSwal, setviewSwal] = useState(false);
     const MySwal = withReactContent(Swal);
+    const [selectedEvents, setSelectedEvents] = useState('todos');
+    const [changeApuntarDesapuntar, setChangeApuntarDesapuntar] = useState(false);
 
     useEffect(() => {
-        fetch(`${BASE_URL}/eventos`)
+        let url = '';
+        if (selectedEvents === 'todos') url = `${BASE_URL}/eventos`;
+        if (selectedEvents === 'misEventos') url = `${BASE_URL}/eventosUsuarios/${user.id}`;
+
+        fetch(url)
             .then(response => response.json())
-            .then(data => setEventos(data));
-    }, [modalClass, viewSwal]);
+            .then(data => setEventos(data))
+            .catch(err => console.log(err));
+
+        setChangeApuntarDesapuntar(false);
+    }, [modalClass, viewSwal, selectedEvents, changeApuntarDesapuntar]);
 
     useEffect(() => {
         const debounce = setTimeout(() => {
-            fetch(`${BASE_URL}/eventos`)
+            let url = '';
+            if (selectedEvents === 'todos') url = `${BASE_URL}/eventos`;
+            if (selectedEvents === 'misEventos') url = `${BASE_URL}/eventosUsuarios/${user.id}`;
+
+            fetch(url)
                 .then(response => response.json())
                 .then(data => {
                     if (search !== "") {
@@ -115,13 +129,16 @@ export function Home() {
             rounded-lg mb-6 text-sm" placeholder="Busca eventos en municipios cercanos..." onInput={changeInput} />
                 </div>
 
+                {user !== undefined && <NavBar setSelectedEvents={setSelectedEvents} />}
+
                 <div className="flex flex-col gap-6 justify-center items-center mb-4">
                     {eventos.length > 0 && eventos.map((evento) => {
                         return (<EventCard key={evento.id} id={evento.id} nombre={evento.nombre} fecha={evento.fecha}
-                            imagen={evento.imagen} municipio={evento.municipio.nombre} openEditModal={openEditModal} openDeleteAlert={openDeleteAlert} />)
+                            imagen={evento.imagen} municipio={evento.municipio.nombre} openEditModal={openEditModal}
+                            descripcion={evento.descripcion} openDeleteAlert={openDeleteAlert} setChangeApuntarDesapuntar={setChangeApuntarDesapuntar}/>)
                     })}
 
-                    {eventos.length === 0 && <p className="text-white font-bold">No hay resultados para la búsqueda</p>}
+                    {eventos.length === 0 && <p className="text-white font-bold">No hay resultados</p>}
                 </div>
             </div>
 

@@ -2,6 +2,7 @@ import express from 'express';
 import  eventosRouter from './routes/eventos.routes.js';
 import  usuariosRouter from './routes/usuarios.routes.js';
 import municipiosRouter from './routes/municipios.routes.js';
+import eventosUsuariosRouter from './routes/eventos_usuarios.routes.js'
 import cors from 'cors';
 import "dotenv/config";
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use('/eventos', eventosRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/municipios', municipiosRouter);
+app.use('/eventosUsuarios', eventosUsuariosRouter);
 
 
 const PORT = process.env.PORT | 3000;
