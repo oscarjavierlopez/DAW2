@@ -1,0 +1,32 @@
+services:
+  mysqldb:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=users
+    ports:
+      - 3307:3306
+    volumes:
+      - ./users.sql:/docker-entrypoint-initdb.d/users.sql #El fichero users.sql se ejecutará cuando se monte la base de datos
+      #Todo lo q hay en docker-entrypoint-initdb.d/ se ejecuta cada vez q se crea la bbdd
+    healthcheck: #con esta condición nos aseguramos de que la api no arranque hasta que mysql se haya configurado correctamente
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: . #busca el Dockerfile en el directorio y lo ejecuta
+    depends_on:
+      mysqldb:
+        condition: service_healthy
+        
+    ports:
+      - 3000:3000
+    environment:
+      - DATABASE_URL=mysql://root:1234@mysqldb:3306/users
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=1234
+      - DATABASE_NAME=users #Crea la bbdd si no existe
+      - DATABASE_HOST=mysqldb
+      - DATABASE_PORT=3306 # 3306 xk se conectan a través de la red interna de docker(se conecta directamente al otro contenedor)

@@ -1,0 +1,6 @@
+node_modules
+users.sql
+.env
+readme.md
+.gitignore
+docker-compose.yml
