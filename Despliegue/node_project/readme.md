@@ -31,3 +31,4 @@ Necesitaremos levantar 2 servicios:
 Para ello ejecutaremos el comando ```docker compose up -d```
 
 ## Evidencias
+Al ejecutar el comando del paso anterior se levantan los 2 contenedores. El contenedor de mysqldb funciona correctamente y contiene la tabla users con todos sus inserts. El contenedor de la API se ejecuta correctamente pero debido a la dependencia PRISMA ORM no establece correctamente la conexión con el contenedor de la base de datos.
