@@ -4,3 +4,4 @@ users.sql
 readme.md
 .gitignore
 docker-compose.yml
+package-lock.json

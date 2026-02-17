@@ -1,6 +1,8 @@
 services:
   mysqldb:
     image: mysql
+    networks:
+      - backend #metemos ambos contenedores en la misma red docker
     environment:
       - MYSQL_ROOT_PASSWORD=1234
       - MYSQL_DATABASE=users
@@ -17,16 +19,19 @@ services:
 
   api:
     build: . #busca el Dockerfile en el directorio y lo ejecuta
+    networks:
+      - backend
     depends_on:
       mysqldb:
         condition: service_healthy
-        
     ports:
       - 3000:3000
     environment:
-      - DATABASE_URL=mysql://root:1234@mysqldb:3306/users
       - DATABASE_USER=root
       - DATABASE_PASSWORD=1234
       - DATABASE_NAME=users #Crea la bbdd si no existe
       - DATABASE_HOST=mysqldb
-      - DATABASE_PORT=3306 # 3306 xk se conectan a través de la red interna de docker(se conecta directamente al otro contenedor)
+      - DATABASE_PORT=3306 # 3306 xk se conectan a través de la red backend de docker(se conecta directamente al otro contenedor)
+
+networks:
+  backend:
