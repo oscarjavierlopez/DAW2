@@ -21,9 +21,9 @@ function colocarBailarines() {
             let fechaAlta = new Date(bailarin.fechaAlta);
             card.innerHTML = `<p class="sexo">${bailarin.sexo === 'masculino' ? '🕺' : '💃'}</p>
             <div>
-            <p>${bailarin.nombre}</p>
-        <p>${bailarin.dni}</p>
-        <p>${fechaAlta.getDate()}/${fechaAlta.getMonth() + 1}/${fechaAlta.getFullYear()}</p>
+            <p class="nombre">${bailarin.nombre}</p>
+        <p class="dni">${bailarin.dni}</p>
+        <p class="fecha">${fechaAlta.getDate()}/${fechaAlta.getMonth() + 1}/${fechaAlta.getFullYear()}</p>
         </div>`;
 
             switch (bailarin.estiloBaile) {
