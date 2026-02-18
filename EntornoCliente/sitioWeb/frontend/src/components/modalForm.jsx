@@ -107,7 +107,7 @@ export function Modal({ modalClass, closeModal, action, id }) {
 
     return (
         <div className={modalClass}>
-            <form className=" bg-gray-100 rounded-sm shadow-md w-1/2 " onSubmit={addEvent}>
+            <form className=" bg-gray-100 rounded-sm shadow-md w-3xl " onSubmit={addEvent}>
                 <div className="flex justify-end">
                     <CloseIcon onClick={closeModal} className="bg-red-600 text-white m-0.5 hover:bg-red-400 hover:scale-110" />
                 </div>
