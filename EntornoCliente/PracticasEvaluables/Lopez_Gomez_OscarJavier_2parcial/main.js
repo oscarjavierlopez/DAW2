@@ -78,7 +78,7 @@ document.getElementById('baja').addEventListener('drop', (e) => {
     pExito.innerText = `${bailarin.nombre} dado de baja. Total gastado ${mesesInscritos === 0 ? 50 : mesesInscritos * 50}.00€`;
     document.getElementById('bailarinesInscritos').append(pExito);
 
-    delete bailarines[e.dataTransfer.getData('text')];
+    bailarines.splice(e.dataTransfer.getData('text'), 1);
     localStorage.setItem('bailarines', JSON.stringify(bailarines));
 
     colocarBailarines();
