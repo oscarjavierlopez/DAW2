@@ -1,0 +1,119 @@
+body {
+    background-color: rgb(80, 80, 105);
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(25, 26, 53);
+}
+
+main {
+    display: flex;
+    gap: 1rem;
+}
+
+#izda{
+    width: 20%;
+    margin-right: 1rem;
+    padding: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 12px;
+    background-color: rgb(160, 160, 192);
+    padding: 0.5rem;
+}
+
+#baja{
+    text-align: center;
+    border-radius: 12px;
+    border: 2px dotted yellow;
+    margin-top: 1rem;
+    padding: 2px;
+}
+
+input[type="submit"] {
+    background-color: yellow;
+    color: black;
+    margin-top: 0.4rem;
+    margin-bottom: 0.2rem;
+    border: 0;
+    width: 4rem;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+#bailarinesInscritos {
+    margin: 1rem;
+    width: 70%;
+    background-color: rgb(160, 160, 192);
+    border-radius: 12px;
+    padding: 0.5rem;
+    border: 1px solid white;
+    padding-bottom: 2rem;
+}
+
+#estilos {
+    display: flex;
+    width: 100%;
+    gap: 0.8rem;
+}
+
+.estilo {
+    background-color: rgb(80, 80, 105);
+    flex-grow: 1;
+    border-radius: 12px;
+    min-height: 15rem;
+    padding: 0.3rem;
+}
+
+h3 {
+    margin: 0.3rem;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.error {
+    background-color: rgb(189, 116, 116);
+    text-align: center;
+}
+
+.exito {
+    background-color: rgb(134, 184, 134);
+    text-align: center;
+}
+
+.card {
+    border-radius: 12px;
+    padding: 0.3rem;
+    margin-top: 0.5rem;
+    display: flex;
+}
+
+.sexo{
+    font-size: 2rem;
+}
+
+.salsa{
+    background-color: rgb(224, 152, 203);
+}
+
+.bachata{
+    background-color: rgb(161, 104, 194);
+}
+
+.rockRoll{
+    background-color: rgb(214, 228, 155);
+}
+
+.swing{
+    background-color: rgb(120, 196, 209);
+}

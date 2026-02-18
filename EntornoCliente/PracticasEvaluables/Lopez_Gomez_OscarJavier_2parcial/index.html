@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen 2Ev</title>
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Academia de Baile IES Julián Marías</h1>
+    </header>
+
+    <main>
+        <div id="izda">
+            <form>
+                <h2>Formulario inscripción</h2>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre">
+                <label for="DNI">DNI</label>
+                <input type="text" name="DNI" id="DNI">
+                <label for="fechaAlta">Nombre</label>
+                <input type="date" name="fechaAlta" id="fechaAlta">
+                <label for="estilo">Estilo</label>
+                <select name="estilo" id="estilo">
+                    <option value="salsa">salsa</option>
+                    <option value="bachata">bachata</option>
+                    <option value="rock&roll">rock & roll</option>
+                    <option value="swing">swing</option>
+                </select>
+                <label for="sexo">Sexo</label>
+                <select name="sexo" id="sexo">
+                    <option value="masculino">masculino</option>
+                    <option value="femenino">femenino</option>
+                </select>
+                <input type="submit" value="Inscribir">
+            </form>
+
+            <div id="baja">
+                Arrastra aquí para dar de baja
+            </div>
+        </div>
+
+        <div id="bailarinesInscritos">
+            <h2>Bailarines inscritos</h2>
+            <div id="estilos">
+                <div id="salsa" class="estilo">
+                    <h3>Salsa</h3>
+                    <div id="salsaCards"></div>
+                </div>
+                <div id="bachata" class="estilo">
+                    <h3>Bachata</h3>
+                    <div id="bachataCards"></div>
+                </div>
+                <div id="rock&roll" class="estilo">
+                    <h3>rock & roll</h3>
+                    <div id="rock&rollCards"></div>
+                </div>
+                <div id="swing" class="estilo">
+                    <h3>swing</h3>
+                    <div id="swingCards"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
